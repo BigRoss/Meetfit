@@ -63,3 +63,6 @@ This script pulls changes from the remote repository.
 
 ### `push.sh`
 This script commits and pushes all changes to the remote repository. It can be run with an argument as a commit message (`bash push.sh "Commit Message"`).
+
+### `reset.sh`
+This script clears all changes since the last commit.
