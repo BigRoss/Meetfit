@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="ajs_f (generated)" id="1477024136473-1">
+        <dropDefaultValue columnDataType="timestamp" columnName="created_date" tableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="ajs_f (generated)" id="1477024136473-2">
+        <dropNotNullConstraint columnDataType="bigint" columnName="organiser_id" tableName="event"/>
+    </changeSet>
+    <changeSet author="ajs_f (generated)" id="1477024136473-3">
+        <dropDefaultValue columnDataType="timestamp" columnName="time" tableName="event"/>
+    </changeSet>
+</databaseChangeLog>
