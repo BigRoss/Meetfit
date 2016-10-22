@@ -44,10 +44,11 @@ This will auto-refresh the browser as files are changed on the hard drive.
 To optimize MeetFit for production, run:
 
 ```
+./mvnw liquibase:diff
 ./mvnw -Pprod clean package
 ```
 
-This will concatenate and minify CSS and JavaScript files. It will also modify `index.html` so it references these new files.
+This will concatenate and minify CSS and JavaScript files. It will also modify `index.html` so it references these new files. Liquibase will update the schema with any added entities.
 
 To ensure everything worked, run:
 
@@ -56,6 +57,8 @@ java -jar target/*.war
 ```
 
 Then navigate to [http://localhost:8080](http://localhost:8080) in your browser.
+
+Make sure you have configured your MySQL server settings in `/src/main/resources/config/application-prod.yml` before compiling, or the application will produce an error on launch.
 
 ## Scripts
 ### `pull.sh`
