@@ -5,9 +5,9 @@
         .module('meetFitApp')
         .controller('AchievedbadgesDialogController', AchievedbadgesDialogController);
 
-    AchievedbadgesDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Achievedbadges', 'Badges', 'User'];
+    AchievedbadgesDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', '$q', 'entity', 'Achievedbadges', 'Badges', 'User'];
 
-    function AchievedbadgesDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Achievedbadges, Badges, User) {
+    function AchievedbadgesDialogController ($timeout, $scope, $stateParams, $uibModalInstance, $q, entity, Achievedbadges, Badges, User) {
         var vm = this;
 
         vm.achievedbadges = entity;

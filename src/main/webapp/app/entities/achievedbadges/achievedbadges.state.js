@@ -95,6 +95,7 @@
                     resolve: {
                         entity: function () {
                             return {
+                                points: null,
                                 id: null
                             };
                         }

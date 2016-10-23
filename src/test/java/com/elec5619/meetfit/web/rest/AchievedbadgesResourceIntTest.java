@@ -38,6 +38,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = MeetFitApp.class)
 public class AchievedbadgesResourceIntTest {
 
+    private static final Integer DEFAULT_POINTS = 1;
+    private static final Integer UPDATED_POINTS = 2;
+
     @Inject
     private AchievedbadgesRepository achievedbadgesRepository;
 
@@ -71,7 +74,8 @@ public class AchievedbadgesResourceIntTest {
      * if they test an entity which requires the current entity.
      */
     public static Achievedbadges createEntity(EntityManager em) {
-        Achievedbadges achievedbadges = new Achievedbadges();
+        Achievedbadges achievedbadges = new Achievedbadges()
+                .points(DEFAULT_POINTS);
         return achievedbadges;
     }
 
@@ -96,6 +100,7 @@ public class AchievedbadgesResourceIntTest {
         List<Achievedbadges> achievedbadges = achievedbadgesRepository.findAll();
         assertThat(achievedbadges).hasSize(databaseSizeBeforeCreate + 1);
         Achievedbadges testAchievedbadges = achievedbadges.get(achievedbadges.size() - 1);
+        assertThat(testAchievedbadges.getPoints()).isEqualTo(DEFAULT_POINTS);
     }
 
     @Test
@@ -108,7 +113,8 @@ public class AchievedbadgesResourceIntTest {
         restAchievedbadgesMockMvc.perform(get("/api/achievedbadges?sort=id,desc"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-                .andExpect(jsonPath("$.[*].id").value(hasItem(achievedbadges.getId().intValue())));
+                .andExpect(jsonPath("$.[*].id").value(hasItem(achievedbadges.getId().intValue())))
+                .andExpect(jsonPath("$.[*].points").value(hasItem(DEFAULT_POINTS)));
     }
 
     @Test
@@ -121,7 +127,8 @@ public class AchievedbadgesResourceIntTest {
         restAchievedbadgesMockMvc.perform(get("/api/achievedbadges/{id}", achievedbadges.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.id").value(achievedbadges.getId().intValue()));
+            .andExpect(jsonPath("$.id").value(achievedbadges.getId().intValue()))
+            .andExpect(jsonPath("$.points").value(DEFAULT_POINTS));
     }
 
     @Test
@@ -141,6 +148,8 @@ public class AchievedbadgesResourceIntTest {
 
         // Update the achievedbadges
         Achievedbadges updatedAchievedbadges = achievedbadgesRepository.findOne(achievedbadges.getId());
+        updatedAchievedbadges
+                .points(UPDATED_POINTS);
 
         restAchievedbadgesMockMvc.perform(put("/api/achievedbadges")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -151,6 +160,7 @@ public class AchievedbadgesResourceIntTest {
         List<Achievedbadges> achievedbadges = achievedbadgesRepository.findAll();
         assertThat(achievedbadges).hasSize(databaseSizeBeforeUpdate);
         Achievedbadges testAchievedbadges = achievedbadges.get(achievedbadges.size() - 1);
+        assertThat(testAchievedbadges.getPoints()).isEqualTo(UPDATED_POINTS);
     }
 
     @Test

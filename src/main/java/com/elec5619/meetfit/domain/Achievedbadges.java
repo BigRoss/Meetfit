@@ -18,10 +18,14 @@ public class Achievedbadges implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(name = "points")
+    private Integer points;
+
     @ManyToOne
     private Badges badges;
 
-    @ManyToOne
+    @OneToOne
+    @JoinColumn(unique = true)
     private User user;
 
     public Long getId() {
@@ -30,6 +34,19 @@ public class Achievedbadges implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Integer getPoints() {
+        return points;
+    }
+
+    public Achievedbadges points(Integer points) {
+        this.points = points;
+        return this;
+    }
+
+    public void setPoints(Integer points) {
+        this.points = points;
     }
 
     public Badges getBadges() {
@@ -82,6 +99,7 @@ public class Achievedbadges implements Serializable {
     public String toString() {
         return "Achievedbadges{" +
             "id=" + id +
+            ", points='" + points + "'" +
             '}';
     }
 }

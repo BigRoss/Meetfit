@@ -12,7 +12,4 @@ import java.util.List;
 @SuppressWarnings("unused")
 public interface AchievedbadgesRepository extends JpaRepository<Achievedbadges,Long> {
 
-    @Query("select achievedbadges from Achievedbadges achievedbadges where achievedbadges.user.login = ?#{principal.username}")
-    List<Achievedbadges> findByUserIsCurrentUser();
-
 }
