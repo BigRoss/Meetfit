@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Fitnessevent.
+    -->
+    <changeSet id="20161023024809-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="organiser_id"
+                                 baseTableName="fitnessevent"
+                                 constraintName="fk_fitnessevent_organiser_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="fitnessevents_id"
+                                 baseTableName="fitnessevent_attending"
+                                 constraintName="fk_fitnessevent_attending_fitnessevents_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="fitnessevent"/>
+        <addForeignKeyConstraint baseColumnNames="attendings_id"
+                                 baseTableName="fitnessevent_attending"
+                                 constraintName="fk_fitnessevent_attending_attendings_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+        
+    </changeSet>
+</databaseChangeLog>

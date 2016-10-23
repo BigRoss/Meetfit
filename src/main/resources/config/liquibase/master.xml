@@ -8,8 +8,10 @@
     <include file="classpath:config/liquibase/changelog/20161015142928_added_entity_Event.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20161020125158_added_entity_Badges.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20161021041755_added_entity_Achievedbadges.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20161023024809_added_entity_Fitnessevent.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="classpath:config/liquibase/changelog/20161015142928_added_entity_constraints_Event.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20161021041755_added_entity_constraints_Achievedbadges.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20161023024809_added_entity_constraints_Fitnessevent.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

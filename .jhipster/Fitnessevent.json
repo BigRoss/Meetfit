@@ -1,0 +1,60 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "organiser",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "login",
+            "ownerSide": true
+        },
+        {
+            "relationshipName": "attending",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-many",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "location",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "starttime",
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "endtime",
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20161023024809",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "fitnessevent",
+    "pagination": "no"
+}
