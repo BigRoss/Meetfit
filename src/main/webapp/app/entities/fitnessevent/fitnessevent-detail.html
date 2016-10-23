@@ -1,0 +1,49 @@
+
+<div>
+    <h2><span>Fitnessevent</span> {{vm.fitnessevent.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Name</span></dt>
+        <dd>
+            <span>{{vm.fitnessevent.name}}</span>
+        </dd>
+        <dt><span>Description</span></dt>
+        <dd>
+            <span>{{vm.fitnessevent.description}}</span>
+        </dd>
+        <dt><span>Location</span></dt>
+        <dd>
+            <span>{{vm.fitnessevent.location}}</span>
+        </dd>
+        <dt><span>Starttime</span></dt>
+        <dd>
+            <span>{{vm.fitnessevent.starttime | date:'medium'}}</span>
+        </dd>
+        <dt><span>Endtime</span></dt>
+        <dd>
+            <span>{{vm.fitnessevent.endtime | date:'medium'}}</span>
+        </dd>
+        <dt><span>Organiser</span></dt>
+        <dd>
+            {{vm.fitnessevent.organiser.login}}
+        </dd>
+        <dt><span>Attending</span></dt>
+        <dd>
+            <span ng-repeat="attending in vm.fitnessevent.attendings">
+                {{attending.}}{{$last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="fitnessevent-detail.edit({id:vm.fitnessevent.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm"> Edit</span>
+    </button>
+</div>

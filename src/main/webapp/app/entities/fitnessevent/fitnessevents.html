@@ -1,0 +1,74 @@
+<div>
+    <h2>Fitnessevents</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="fitnessevent.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Fitnessevent
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>Name</span></th>
+                    <th><span>Description</span></th>
+                    <th><span>Location</span></th>
+                    <th><span>Starttime</span></th>
+                    <th><span>Endtime</span></th>
+                    <th><span>Organiser</span></th>
+                    <th><span>Attending</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="fitnessevent in vm.fitnessevents track by fitnessevent.id">
+                    <td><a ui-sref="fitnessevent-detail({id:fitnessevent.id})">{{fitnessevent.id}}</a></td>
+                    <td>{{fitnessevent.name}}</td>
+                    <td>{{fitnessevent.description}}</td>
+                    <td>{{fitnessevent.location}}</td>
+                    <td>{{fitnessevent.starttime | date:'medium'}}</td>
+                    <td>{{fitnessevent.endtime | date:'medium'}}</td>
+                    <td>
+                        {{fitnessevent.organiser.login}}
+                    </td>
+                    <td>
+                        <span ng-repeat="attending in fitnessevent.attendings">
+                            {{attending.}}{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="fitnessevent-detail({id:fitnessevent.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="fitnessevent.edit({id:fitnessevent.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="fitnessevent.delete({id:fitnessevent.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
