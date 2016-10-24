@@ -2,6 +2,7 @@ package com.elec5619.meetfit.domain;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.time.ZonedDateTime;
 import java.util.Objects;
@@ -30,6 +31,17 @@ public class Profile implements Serializable {
 
     @Column(name = "dob")
     private ZonedDateTime dob;
+
+    @Column(name = "gender")
+    private String gender;
+
+    @NotNull
+    @Size(min = 4, max = 20)
+    @Column(name = "nickname", length = 20, nullable = false)
+    private String nickname;
+
+    @Column(name = "bio")
+    private String bio;
 
     @OneToOne
     @JoinColumn(unique = true)
@@ -95,6 +107,45 @@ public class Profile implements Serializable {
         this.dob = dob;
     }
 
+    public String getGender() {
+        return gender;
+    }
+
+    public Profile gender(String gender) {
+        this.gender = gender;
+        return this;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public Profile nickname(String nickname) {
+        this.nickname = nickname;
+        return this;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
+    public Profile bio(String bio) {
+        this.bio = bio;
+        return this;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
+    }
+
     public User getOwner() {
         return owner;
     }
@@ -136,6 +187,9 @@ public class Profile implements Serializable {
             ", weight='" + weight + "'" +
             ", location='" + location + "'" +
             ", dob='" + dob + "'" +
+            ", gender='" + gender + "'" +
+            ", nickname='" + nickname + "'" +
+            ", bio='" + bio + "'" +
             '}';
     }
 }

@@ -55,6 +55,15 @@ public class ProfileResourceIntTest {
     private static final ZonedDateTime UPDATED_DOB = ZonedDateTime.now(ZoneId.systemDefault()).withNano(0);
     private static final String DEFAULT_DOB_STR = DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(DEFAULT_DOB);
 
+    private static final String DEFAULT_GENDER = "AAAAA";
+    private static final String UPDATED_GENDER = "BBBBB";
+
+    private static final String DEFAULT_NICKNAME = "AAAA";
+    private static final String UPDATED_NICKNAME = "BBBB";
+
+    private static final String DEFAULT_BIO = "AAAAA";
+    private static final String UPDATED_BIO = "BBBBB";
+
     @Inject
     private ProfileRepository profileRepository;
 
@@ -92,7 +101,10 @@ public class ProfileResourceIntTest {
                 .height(DEFAULT_HEIGHT)
                 .weight(DEFAULT_WEIGHT)
                 .location(DEFAULT_LOCATION)
-                .dob(DEFAULT_DOB);
+                .dob(DEFAULT_DOB)
+                .gender(DEFAULT_GENDER)
+                .nickname(DEFAULT_NICKNAME)
+                .bio(DEFAULT_BIO);
         return profile;
     }
 
@@ -121,6 +133,27 @@ public class ProfileResourceIntTest {
         assertThat(testProfile.getWeight()).isEqualTo(DEFAULT_WEIGHT);
         assertThat(testProfile.getLocation()).isEqualTo(DEFAULT_LOCATION);
         assertThat(testProfile.getDob()).isEqualTo(DEFAULT_DOB);
+        assertThat(testProfile.getGender()).isEqualTo(DEFAULT_GENDER);
+        assertThat(testProfile.getNickname()).isEqualTo(DEFAULT_NICKNAME);
+        assertThat(testProfile.getBio()).isEqualTo(DEFAULT_BIO);
+    }
+
+    @Test
+    @Transactional
+    public void checkNicknameIsRequired() throws Exception {
+        int databaseSizeBeforeTest = profileRepository.findAll().size();
+        // set the field null
+        profile.setNickname(null);
+
+        // Create the Profile, which fails.
+
+        restProfileMockMvc.perform(post("/api/profiles")
+                .contentType(TestUtil.APPLICATION_JSON_UTF8)
+                .content(TestUtil.convertObjectToJsonBytes(profile)))
+                .andExpect(status().isBadRequest());
+
+        List<Profile> profiles = profileRepository.findAll();
+        assertThat(profiles).hasSize(databaseSizeBeforeTest);
     }
 
     @Test
@@ -137,7 +170,10 @@ public class ProfileResourceIntTest {
                 .andExpect(jsonPath("$.[*].height").value(hasItem(DEFAULT_HEIGHT)))
                 .andExpect(jsonPath("$.[*].weight").value(hasItem(DEFAULT_WEIGHT)))
                 .andExpect(jsonPath("$.[*].location").value(hasItem(DEFAULT_LOCATION.toString())))
-                .andExpect(jsonPath("$.[*].dob").value(hasItem(DEFAULT_DOB_STR)));
+                .andExpect(jsonPath("$.[*].dob").value(hasItem(DEFAULT_DOB_STR)))
+                .andExpect(jsonPath("$.[*].gender").value(hasItem(DEFAULT_GENDER.toString())))
+                .andExpect(jsonPath("$.[*].nickname").value(hasItem(DEFAULT_NICKNAME.toString())))
+                .andExpect(jsonPath("$.[*].bio").value(hasItem(DEFAULT_BIO.toString())));
     }
 
     @Test
@@ -154,7 +190,10 @@ public class ProfileResourceIntTest {
             .andExpect(jsonPath("$.height").value(DEFAULT_HEIGHT))
             .andExpect(jsonPath("$.weight").value(DEFAULT_WEIGHT))
             .andExpect(jsonPath("$.location").value(DEFAULT_LOCATION.toString()))
-            .andExpect(jsonPath("$.dob").value(DEFAULT_DOB_STR));
+            .andExpect(jsonPath("$.dob").value(DEFAULT_DOB_STR))
+            .andExpect(jsonPath("$.gender").value(DEFAULT_GENDER.toString()))
+            .andExpect(jsonPath("$.nickname").value(DEFAULT_NICKNAME.toString()))
+            .andExpect(jsonPath("$.bio").value(DEFAULT_BIO.toString()));
     }
 
     @Test
@@ -178,7 +217,10 @@ public class ProfileResourceIntTest {
                 .height(UPDATED_HEIGHT)
                 .weight(UPDATED_WEIGHT)
                 .location(UPDATED_LOCATION)
-                .dob(UPDATED_DOB);
+                .dob(UPDATED_DOB)
+                .gender(UPDATED_GENDER)
+                .nickname(UPDATED_NICKNAME)
+                .bio(UPDATED_BIO);
 
         restProfileMockMvc.perform(put("/api/profiles")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -193,6 +235,9 @@ public class ProfileResourceIntTest {
         assertThat(testProfile.getWeight()).isEqualTo(UPDATED_WEIGHT);
         assertThat(testProfile.getLocation()).isEqualTo(UPDATED_LOCATION);
         assertThat(testProfile.getDob()).isEqualTo(UPDATED_DOB);
+        assertThat(testProfile.getGender()).isEqualTo(UPDATED_GENDER);
+        assertThat(testProfile.getNickname()).isEqualTo(UPDATED_NICKNAME);
+        assertThat(testProfile.getBio()).isEqualTo(UPDATED_BIO);
     }
 
     @Test
