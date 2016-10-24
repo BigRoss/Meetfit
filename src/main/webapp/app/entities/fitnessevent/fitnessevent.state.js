@@ -159,6 +159,30 @@
                     $state.go('^');
                 });
             }]
+        })
+        .state('fitnessevent.join', {
+            parent: 'fitnessevent',
+            url: '/{id}/join',
+            data: {
+                authorities: ['ROLE_USER']
+            },
+            onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
+                $uibModal.open({
+                    templateUrl: 'app/entities/fitnessevent/fitnessevent-join-dialog.html',
+                    controller: 'FitnesseventJoinController',
+                    controllerAs: 'vm',
+                    size: 'md',
+                    resolve: {
+                        entity: ['Fitnessevent', function(Fitnessevent) {
+                            return Fitnessevent.get({id : $stateParams.id}).$promise;
+                        }]
+                    }
+                }).result.then(function() {
+                    $state.go('fitnessevent', null, { reload: 'fitnessevent' });
+                }, function() {
+                    $state.go('^');
+                });
+            }]
         });
     }
 
