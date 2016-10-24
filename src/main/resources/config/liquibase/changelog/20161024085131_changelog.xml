@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="ajs_f (generated)" id="1477299100466-1">
+        <addColumn tableName="achievedbadges">
+            <column name="points" type="integer"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="ajs_f (generated)" id="1477299100466-2">
+        <addUniqueConstraint columnNames="user_id" constraintName="UC_ACHIEVEDBADGESUSER_ID_COL" tableName="achievedbadges"/>
+    </changeSet>
+    <changeSet author="ajs_f (generated)" id="1477299100466-3">
+        <dropColumn columnName="POINTS" tableName="JHI_USER"/>
+    </changeSet>
+    <changeSet author="ajs_f (generated)" id="1477299100466-4">
+        <dropDefaultValue columnDataType="timestamp" columnName="created_date" tableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="ajs_f (generated)" id="1477299100466-5">
+        <dropDefaultValue columnDataType="timestamp" columnName="endtime" tableName="fitnessevent"/>
+    </changeSet>
+    <changeSet author="ajs_f (generated)" id="1477299100466-6">
+        <dropNotNullConstraint columnDataType="bigint" columnName="organiser_id" tableName="event"/>
+    </changeSet>
+    <changeSet author="ajs_f (generated)" id="1477299100466-7">
+        <dropNotNullConstraint columnDataType="bigint" columnName="organiser_id" tableName="fitnessevent"/>
+    </changeSet>
+    <changeSet author="ajs_f (generated)" id="1477299100466-8">
+        <dropDefaultValue columnDataType="timestamp" columnName="starttime" tableName="fitnessevent"/>
+    </changeSet>
+    <changeSet author="ajs_f (generated)" id="1477299100466-9">
+        <dropDefaultValue columnDataType="timestamp" columnName="time" tableName="event"/>
+    </changeSet>
+</databaseChangeLog>

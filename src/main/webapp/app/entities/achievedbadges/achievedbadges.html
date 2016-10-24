@@ -20,6 +20,7 @@
                 <tr>
                     <th><span>ID</span></th>
                     <th><span>Points</span></th>
+                    <th><span>Type</span></th>
                     <th><span>Badges</span></th>
                     <th><span>User</span></th>
                     <th></th>
@@ -29,6 +30,7 @@
                 <tr ng-repeat="achievedbadges in vm.achievedbadges track by achievedbadges.id">
                     <td><a ui-sref="achievedbadges-detail({id:achievedbadges.id})">{{achievedbadges.id}}</a></td>
                     <td>{{achievedbadges.points}}</td>
+                    <td>{{achievedbadges.type}}</td>
                     <td>
                         <a ui-sref="badges-detail({id:achievedbadges.badges.id})">{{achievedbadges.badges.id}}</a>
                     </td>

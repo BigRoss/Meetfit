@@ -96,6 +96,7 @@
                         entity: function () {
                             return {
                                 points: null,
+                                type: null,
                                 id: null
                             };
                         }

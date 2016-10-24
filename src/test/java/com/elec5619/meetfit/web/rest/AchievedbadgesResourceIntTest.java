@@ -41,6 +41,9 @@ public class AchievedbadgesResourceIntTest {
     private static final Integer DEFAULT_POINTS = 1;
     private static final Integer UPDATED_POINTS = 2;
 
+    private static final String DEFAULT_TYPE = "AAAAA";
+    private static final String UPDATED_TYPE = "BBBBB";
+
     @Inject
     private AchievedbadgesRepository achievedbadgesRepository;
 
@@ -75,7 +78,8 @@ public class AchievedbadgesResourceIntTest {
      */
     public static Achievedbadges createEntity(EntityManager em) {
         Achievedbadges achievedbadges = new Achievedbadges()
-                .points(DEFAULT_POINTS);
+                .points(DEFAULT_POINTS)
+                .type(DEFAULT_TYPE);
         return achievedbadges;
     }
 
@@ -101,6 +105,7 @@ public class AchievedbadgesResourceIntTest {
         assertThat(achievedbadges).hasSize(databaseSizeBeforeCreate + 1);
         Achievedbadges testAchievedbadges = achievedbadges.get(achievedbadges.size() - 1);
         assertThat(testAchievedbadges.getPoints()).isEqualTo(DEFAULT_POINTS);
+        assertThat(testAchievedbadges.getType()).isEqualTo(DEFAULT_TYPE);
     }
 
     @Test
@@ -114,7 +119,8 @@ public class AchievedbadgesResourceIntTest {
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
                 .andExpect(jsonPath("$.[*].id").value(hasItem(achievedbadges.getId().intValue())))
-                .andExpect(jsonPath("$.[*].points").value(hasItem(DEFAULT_POINTS)));
+                .andExpect(jsonPath("$.[*].points").value(hasItem(DEFAULT_POINTS)))
+                .andExpect(jsonPath("$.[*].type").value(hasItem(DEFAULT_TYPE.toString())));
     }
 
     @Test
@@ -128,7 +134,8 @@ public class AchievedbadgesResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(achievedbadges.getId().intValue()))
-            .andExpect(jsonPath("$.points").value(DEFAULT_POINTS));
+            .andExpect(jsonPath("$.points").value(DEFAULT_POINTS))
+            .andExpect(jsonPath("$.type").value(DEFAULT_TYPE.toString()));
     }
 
     @Test
@@ -149,7 +156,8 @@ public class AchievedbadgesResourceIntTest {
         // Update the achievedbadges
         Achievedbadges updatedAchievedbadges = achievedbadgesRepository.findOne(achievedbadges.getId());
         updatedAchievedbadges
-                .points(UPDATED_POINTS);
+                .points(UPDATED_POINTS)
+                .type(UPDATED_TYPE);
 
         restAchievedbadgesMockMvc.perform(put("/api/achievedbadges")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -161,6 +169,7 @@ public class AchievedbadgesResourceIntTest {
         assertThat(achievedbadges).hasSize(databaseSizeBeforeUpdate);
         Achievedbadges testAchievedbadges = achievedbadges.get(achievedbadges.size() - 1);
         assertThat(testAchievedbadges.getPoints()).isEqualTo(UPDATED_POINTS);
+        assertThat(testAchievedbadges.getType()).isEqualTo(UPDATED_TYPE);
     }
 
     @Test
