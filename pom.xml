@@ -10,10 +10,10 @@
     </parent>
 
     <groupId>com.elec5619.meetfit</groupId>
-    <artifactId>meet-fit</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <artifactId>meetfit</artifactId>
+    <version>BETA</version>
     <packaging>war</packaging>
-    <name>Meet Fit</name>
+    <name>MeetFit</name>
 
     <prerequisites>
         <maven>3.0.0</maven>

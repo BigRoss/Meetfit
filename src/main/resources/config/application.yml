@@ -36,7 +36,7 @@ spring:
         basename: i18n/messages
     mvc:
         favicon:
-            enabled: false
+            enabled: true
     thymeleaf:
         mode: XHTML
 
@@ -74,4 +74,4 @@ jhipster:
         licenseUrl:
     ribbon:
         # comma seperated list of profiles to show a ribbon on the GUI
-        displayOnActiveProfiles: dev
+        displayOnActiveProfiles: 
