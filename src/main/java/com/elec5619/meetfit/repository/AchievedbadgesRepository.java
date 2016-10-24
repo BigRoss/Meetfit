@@ -12,4 +12,7 @@ import java.util.List;
 @SuppressWarnings("unused")
 public interface AchievedbadgesRepository extends JpaRepository<Achievedbadges,Long> {
 
+    List<Achievedbadges> findAllByOrderByPointsAsc();
+
+    List<Achievedbadges> findAllByOrderByPointsDesc();
 }
