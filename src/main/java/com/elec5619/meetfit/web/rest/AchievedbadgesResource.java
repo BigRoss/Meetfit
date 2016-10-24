@@ -34,7 +34,6 @@ public class AchievedbadgesResource {
 
     @Inject
     private CalcBadgeService badgeService;
-
     /**
      * POST  /achievedbadges : Create a new achievedbadges.
      *
@@ -52,7 +51,6 @@ public class AchievedbadgesResource {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("achievedbadges", "idexists", "A new achievedbadges cannot already have an ID")).body(null);
         }
         Achievedbadges result = badgeService.add(achievedbadges);
-
         return ResponseEntity.created(new URI("/api/achievedbadges/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert("achievedbadges", result.getId().toString()))
             .body(result);
@@ -76,7 +74,7 @@ public class AchievedbadgesResource {
         if (achievedbadges.getId() == null) {
             return createAchievedbadges(achievedbadges);
         }
-        Achievedbadges result = achievedbadgesRepository.save(achievedbadges);
+        Achievedbadges result = badgeService.add(achievedbadges);
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert("achievedbadges", achievedbadges.getId().toString()))
             .body(result);
