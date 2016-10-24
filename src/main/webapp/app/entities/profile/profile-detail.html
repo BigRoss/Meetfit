@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span>Profile</span> {{vm.profile.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Height</span></dt>
+        <dd>
+            <span>{{vm.profile.height}}</span>
+        </dd>
+        <dt><span>Weight</span></dt>
+        <dd>
+            <span>{{vm.profile.weight}}</span>
+        </dd>
+        <dt><span>Location</span></dt>
+        <dd>
+            <span>{{vm.profile.location}}</span>
+        </dd>
+        <dt><span>Dob</span></dt>
+        <dd>
+            <span>{{vm.profile.dob | date:'medium'}}</span>
+        </dd>
+        <dt><span>Owner</span></dt>
+        <dd>
+            {{vm.profile.owner.id}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="profile-detail.edit({id:vm.profile.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm"> Edit</span>
+    </button>
+</div>
