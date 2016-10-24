@@ -91,7 +91,7 @@ public class AchievedbadgesResource {
     @Timed
     public List<Achievedbadges> getAllAchievedbadges() {
         log.debug("REST request to get all Achievedbadges");
-        List<Achievedbadges> achievedbadges = achievedbadgesRepository.findAll();
+        List<Achievedbadges> achievedbadges = achievedbadgesRepository.findAllByOrderByPointsDesc();
         return achievedbadges;
     }
 
