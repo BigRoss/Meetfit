@@ -3,8 +3,13 @@ package com.elec5619.meetfit.web.rest;
 import com.codahale.metrics.annotation.Timed;
 import com.elec5619.meetfit.domain.Fitnessevent;
 
+import com.elec5619.meetfit.domain.User;
 import com.elec5619.meetfit.repository.FitnesseventRepository;
+import com.elec5619.meetfit.repository.UserRepository;
+import com.elec5619.meetfit.security.SecurityUtils;
+import com.elec5619.meetfit.service.FitnesseventService;
 import com.elec5619.meetfit.web.rest.util.HeaderUtil;
+import com.elec5619.meetfit.web.rest.vm.ManagedUserVM;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
@@ -28,9 +33,12 @@ import java.util.Optional;
 public class FitnesseventResource {
 
     private final Logger log = LoggerFactory.getLogger(FitnesseventResource.class);
-        
+
     @Inject
     private FitnesseventRepository fitnesseventRepository;
+
+    @Inject
+    private FitnesseventService fitnesseventService;
 
     /**
      * POST  /fitnessevents : Create a new fitnessevent.
@@ -48,7 +56,9 @@ public class FitnesseventResource {
         if (fitnessevent.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("fitnessevent", "idexists", "A new fitnessevent cannot already have an ID")).body(null);
         }
-        Fitnessevent result = fitnesseventRepository.save(fitnessevent);
+
+        Fitnessevent result = fitnesseventService.doStuff(fitnessevent);
+
         return ResponseEntity.created(new URI("/api/fitnessevents/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert("fitnessevent", result.getId().toString()))
             .body(result);
@@ -73,9 +83,8 @@ public class FitnesseventResource {
             return createFitnessevent(fitnessevent);
         }
         Fitnessevent result = fitnesseventRepository.save(fitnessevent);
-        return ResponseEntity.ok()
-            .headers(HeaderUtil.createEntityUpdateAlert("fitnessevent", fitnessevent.getId().toString()))
-            .body(result);
+
+        return ResponseEntity.ok().headers(HeaderUtil.createEntityUpdateAlert("fitnessevent", fitnessevent.getId().toString())).body(result);
     }
 
     /**
@@ -89,7 +98,7 @@ public class FitnesseventResource {
     @Timed
     public List<Fitnessevent> getAllFitnessevents() {
         log.debug("REST request to get all Fitnessevents");
-        List<Fitnessevent> fitnessevents = fitnesseventRepository.findAllWithEagerRelationships();
+        List<Fitnessevent> fitnessevents = fitnesseventRepository.findAll();
         return fitnessevents;
     }
 
