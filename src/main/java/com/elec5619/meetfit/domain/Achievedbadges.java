@@ -21,6 +21,9 @@ public class Achievedbadges implements Serializable {
     @Column(name = "points")
     private Integer points;
 
+    @Column(name = "type")
+    private String type;
+
     @ManyToOne
     private Badges badges;
 
@@ -47,6 +50,19 @@ public class Achievedbadges implements Serializable {
 
     public void setPoints(Integer points) {
         this.points = points;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public Achievedbadges type(String type) {
+        this.type = type;
+        return this;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public Badges getBadges() {
@@ -100,6 +116,7 @@ public class Achievedbadges implements Serializable {
         return "Achievedbadges{" +
             "id=" + id +
             ", points='" + points + "'" +
+            ", type='" + type + "'" +
             '}';
     }
 }

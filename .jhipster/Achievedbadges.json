@@ -20,6 +20,10 @@
         {
             "fieldName": "points",
             "fieldType": "Integer"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "String"
         }
     ],
     "changelogDate": "20161021041755",
