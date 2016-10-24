@@ -36,18 +36,6 @@
             <column name="dob" type="timestamp">
                 <constraints nullable="true" />
             </column>
-            
-            <column name="gender" type="varchar(255)">
-                <constraints nullable="true" />
-            </column>
-            
-            <column name="nickname" type="varchar(20)">
-                <constraints nullable="false" />
-            </column>
-            
-            <column name="bio" type="varchar(255)">
-                <constraints nullable="true" />
-            </column>
                         <column name="owner_id" type="bigint">
                 <constraints unique="true" nullable="true" />
             </column>

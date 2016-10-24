@@ -99,9 +99,6 @@
                                 weight: null,
                                 location: null,
                                 dob: null,
-                                gender: null,
-                                nickname: null,
-                                bio: null,
                                 id: null
                             };
                         }
