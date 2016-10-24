@@ -5,13 +5,13 @@
             "relationshipName": "badges",
             "otherEntityName": "badges",
             "relationshipType": "many-to-one",
-            "otherEntityField": "id"
+            "otherEntityField": "name"
         },
         {
             "relationshipName": "user",
             "otherEntityName": "user",
             "relationshipType": "one-to-one",
-            "otherEntityField": "id",
+            "otherEntityField": "login",
             "ownerSide": true,
             "otherEntityRelationshipName": "achievedbadges"
         }
