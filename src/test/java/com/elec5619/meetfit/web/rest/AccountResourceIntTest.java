@@ -297,6 +297,48 @@ public class AccountResourceIntTest {
 
     @Test
     @Transactional
+    public void testDifferentCaseLogin() throws Exception {
+        // Good
+        ManagedUserVM validUser = new ManagedUserVM(
+            null,                   // id
+            "john",                // login
+            "password",             // password
+            "John",                // firstName
+            "Smith",            // lastName
+            "john@example.com",    // e-mail
+            true,                   // activated
+            "en",                   // langKey
+            new HashSet<>(Arrays.asList(AuthoritiesConstants.USER)),
+            null,                   // createdBy
+            null,                   // createdDate
+            null,                   // lastModifiedBy
+            null                    // lastModifiedDate
+        );
+
+        // Duplicate login, different e-mail
+        ManagedUserVM caseUser = new ManagedUserVM(validUser.getId(), "JOHN", validUser.getPassword(), validUser.getLogin(), validUser.getLastName(),
+            "johncase@example.com", true, validUser.getLangKey(), validUser.getAuthorities(), validUser.getCreatedBy(), validUser.getCreatedDate(), validUser.getLastModifiedBy(), validUser.getLastModifiedDate());
+
+        // Good user
+        restMvc.perform(
+            post("/api/register")
+                .contentType(TestUtil.APPLICATION_JSON_UTF8)
+                .content(TestUtil.convertObjectToJsonBytes(validUser)))
+            .andExpect(status().isCreated());
+
+        // Bad case user
+        restMvc.perform(
+            post("/api/register")
+                .contentType(TestUtil.APPLICATION_JSON_UTF8)
+                .content(TestUtil.convertObjectToJsonBytes(caseUser)))
+            .andExpect(status().is4xxClientError());
+
+        Optional<User> userCase = userRepository.findOneByEmail("johncase@example.com");
+        assertThat(userCase.isPresent()).isFalse();
+    }
+
+    @Test
+    @Transactional
     public void testRegisterDuplicateEmail() throws Exception {
         // Good
         ManagedUserVM validUser = new ManagedUserVM(

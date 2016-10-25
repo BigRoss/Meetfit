@@ -1,0 +1,425 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building MeetFit BETA
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.1:copy-resources (default-resources) @ meetfit ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 19 resources
+[INFO] Copying 10 resources
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.1:resources (default-resources) @ meetfit ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 19 resources
+[INFO] Copying 10 resources
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-versions) @ meetfit ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.7.201606060606:prepare-agent (pre-unit-tests) @ meetfit ---
+[INFO] argLine set to -javaagent:/home/andrew/.m2/repository/org/jacoco/org.jacoco.agent/0.7.7.201606060606/org.jacoco.agent-0.7.7.201606060606-runtime.jar=destfile=/home/andrew/NEWATTEMPT/elec5619-project-meetfit/target/test-results/coverage/jacoco/jacoco.exec -Djava.security.egd=file:/dev/./urandom -Xmx256m
+[INFO] 
+[INFO] --- maven-processor-plugin:2.2.4:process (process) @ meetfit ---
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ meetfit ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 104 source files to /home/andrew/NEWATTEMPT/elec5619-project-meetfit/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.1:testResources (default-testResources) @ meetfit ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ meetfit ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 11 source files to /home/andrew/NEWATTEMPT/elec5619-project-meetfit/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.18.1:test (default-test) @ meetfit ---
+[INFO] Surefire report directory: /home/andrew/NEWATTEMPT/elec5619-project-meetfit/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.elec5619.meetfit.security.SecurityUtilsUnitTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.205 sec - in com.elec5619.meetfit.security.SecurityUtilsUnitTest
+Running com.elec5619.meetfit.service.UserServiceIntTest
+
+        ██  ██    ██  ████████  ███████    ██████  ████████  ████████  ███████
+        ██  ██    ██     ██     ██    ██  ██          ██     ██        ██    ██
+        ██  ████████     ██     ███████    █████      ██     ██████    ███████
+  ██    ██  ██    ██     ██     ██             ██     ██     ██        ██   ██
+   ██████   ██    ██  ████████  ██        ██████      ██     ████████  ██    ██
+
+:: JHipster 🤓  :: Running Spring Boot 1.4.1.RELEASE ::
+:: http://jhipster.github.io ::
+
+2016-10-24 19:48:35.287  INFO 27162 --- [           main] c.e.meetfit.service.UserServiceIntTest   : Starting UserServiceIntTest on ubuntu with PID 27162 (started by andrew in /home/andrew/NEWATTEMPT/elec5619-project-meetfit)
+2016-10-24 19:48:35.313 DEBUG 27162 --- [           main] c.e.meetfit.service.UserServiceIntTest   : Running with Spring Boot v1.4.1.RELEASE, Spring v4.3.3.RELEASE
+2016-10-24 19:48:35.315  INFO 27162 --- [           main] c.e.meetfit.service.UserServiceIntTest   : No active profile set, falling back to default profiles: default
+2016-10-24 19:48:40.958 DEBUG 27162 --- [           main] c.e.meetfit.config.AsyncConfiguration    : Creating Async Task Executor
+2016-10-24 19:48:41.989 DEBUG 27162 --- [           main] c.e.meetfit.config.MetricsConfiguration  : Registering JVM gauges
+2016-10-24 19:48:42.079 DEBUG 27162 --- [           main] c.e.meetfit.config.MetricsConfiguration  : Monitoring the datasource
+2016-10-24 19:48:42.086 DEBUG 27162 --- [           main] c.e.meetfit.config.MetricsConfiguration  : Initializing Metrics JMX reporting
+2016-10-24 19:48:42.868 DEBUG 27162 --- [           main] c.e.m.config.DatabaseConfiguration       : Configuring Liquibase
+2016-10-24 19:48:42.902 DEBUG 27162 --- [           main] c.e.m.c.liquibase.AsyncSpringLiquibase   : Starting Liquibase synchronously
+2016-10-24 19:48:45.934 DEBUG 27162 --- [           main] c.e.m.c.liquibase.AsyncSpringLiquibase   : Started Liquibase in 3031 ms
+2016-10-24 19:48:49.385  INFO 27162 --- [           main] com.elec5619.meetfit.MeetFitApp          : Running with Spring profile(s) : []
+2016-10-24 19:48:55.023 DEBUG 27162 --- [           main] c.e.meetfit.config.CacheConfiguration    : No cache
+2016-10-24 19:48:59.957  INFO 27162 --- [           main] c.e.meetfit.service.UserServiceIntTest   : Started UserServiceIntTest in 27.114 seconds (JVM running for 30.271)
+Hibernate: select authority0_.name as name1_5_0_ from jhi_authority authority0_ where authority0_.name=?
+Hibernate: insert into jhi_user (id, created_by, created_date, last_modified_by, last_modified_date, activated, activation_key, email, first_name, lang_key, last_name, login, password_hash, reset_date, reset_key) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2016-10-24 19:49:00.444 DEBUG 27162 --- [           main] c.elec5619.meetfit.service.UserService   : Created Information for User: User{login='johndoe', firstName='John', lastName='Doe', email='john.doe@localhost', activated='false', langKey='en-US', activationKey='47415014027753771987'}
+Hibernate: select user0_.id as id1_9_, user0_.created_by as created_2_9_, user0_.created_date as created_3_9_, user0_.last_modified_by as last_mod4_9_, user0_.last_modified_date as last_mod5_9_, user0_.activated as activate6_9_, user0_.activation_key as activati7_9_, user0_.email as email8_9_, user0_.first_name as first_na9_9_, user0_.lang_key as lang_ke10_9_, user0_.last_name as last_na11_9_, user0_.login as login12_9_, user0_.password_hash as passwor13_9_, user0_.reset_date as reset_d14_9_, user0_.reset_key as reset_k15_9_ from jhi_user user0_ where user0_.email=?
+Hibernate: select user0_.id as id1_9_, user0_.created_by as created_2_9_, user0_.created_date as created_3_9_, user0_.last_modified_by as last_mod4_9_, user0_.last_modified_date as last_mod5_9_, user0_.activated as activate6_9_, user0_.activation_key as activati7_9_, user0_.email as email8_9_, user0_.first_name as first_na9_9_, user0_.lang_key as lang_ke10_9_, user0_.last_name as last_na11_9_, user0_.login as login12_9_, user0_.password_hash as passwor13_9_, user0_.reset_date as reset_d14_9_, user0_.reset_key as reset_k15_9_ from jhi_user user0_ where user0_.email=?
+Hibernate: select user0_.id as id1_9_, user0_.created_by as created_2_9_, user0_.created_date as created_3_9_, user0_.last_modified_by as last_mod4_9_, user0_.last_modified_date as last_mod5_9_, user0_.activated as activate6_9_, user0_.activation_key as activati7_9_, user0_.email as email8_9_, user0_.first_name as first_na9_9_, user0_.lang_key as lang_ke10_9_, user0_.last_name as last_na11_9_, user0_.login as login12_9_, user0_.password_hash as passwor13_9_, user0_.reset_date as reset_d14_9_, user0_.reset_key as reset_k15_9_ from jhi_user user0_ where user0_.email=?
+Hibernate: select authority0_.name as name1_5_0_ from jhi_authority authority0_ where authority0_.name=?
+Hibernate: insert into jhi_user (id, created_by, created_date, last_modified_by, last_modified_date, activated, activation_key, email, first_name, lang_key, last_name, login, password_hash, reset_date, reset_key) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2016-10-24 19:49:00.797 DEBUG 27162 --- [           main] c.elec5619.meetfit.service.UserService   : Created Information for User: User{login='johndoe', firstName='John', lastName='Doe', email='john.doe@localhost', activated='false', langKey='en-US', activationKey='06498026938962586333'}
+2016-10-24 19:49:00.802 DEBUG 27162 --- [           main] c.elec5619.meetfit.service.UserService   : Reset user password for reset key 1234
+Hibernate: update jhi_user set created_date=?, last_modified_by=?, last_modified_date=?, activated=?, activation_key=?, email=?, first_name=?, lang_key=?, last_name=?, login=?, password_hash=?, reset_date=?, reset_key=? where id=?
+Hibernate: insert into jhi_user_authority (user_id, authority_name) values (?, ?)
+Hibernate: select user0_.id as id1_9_, user0_.created_by as created_2_9_, user0_.created_date as created_3_9_, user0_.last_modified_by as last_mod4_9_, user0_.last_modified_date as last_mod5_9_, user0_.activated as activate6_9_, user0_.activation_key as activati7_9_, user0_.email as email8_9_, user0_.first_name as first_na9_9_, user0_.lang_key as lang_ke10_9_, user0_.last_name as last_na11_9_, user0_.login as login12_9_, user0_.password_hash as passwor13_9_, user0_.reset_date as reset_d14_9_, user0_.reset_key as reset_k15_9_ from jhi_user user0_ where user0_.reset_key=?
+Hibernate: select authority0_.name as name1_5_0_ from jhi_authority authority0_ where authority0_.name=?
+Hibernate: insert into jhi_user (id, created_by, created_date, last_modified_by, last_modified_date, activated, activation_key, email, first_name, lang_key, last_name, login, password_hash, reset_date, reset_key) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2016-10-24 19:49:01.097 DEBUG 27162 --- [           main] c.elec5619.meetfit.service.UserService   : Created Information for User: User{login='johndoe', firstName='John', lastName='Doe', email='john.doe@localhost', activated='false', langKey='en-US', activationKey='13174304192214635991'}
+2016-10-24 19:49:01.099 DEBUG 27162 --- [           main] c.elec5619.meetfit.service.UserService   : Reset user password for reset key 12295002804870962352
+Hibernate: update jhi_user set created_date=?, last_modified_by=?, last_modified_date=?, activated=?, activation_key=?, email=?, first_name=?, lang_key=?, last_name=?, login=?, password_hash=?, reset_date=?, reset_key=? where id=?
+Hibernate: insert into jhi_user_authority (user_id, authority_name) values (?, ?)
+Hibernate: select user0_.id as id1_9_, user0_.created_by as created_2_9_, user0_.created_date as created_3_9_, user0_.last_modified_by as last_mod4_9_, user0_.last_modified_date as last_mod5_9_, user0_.activated as activate6_9_, user0_.activation_key as activati7_9_, user0_.email as email8_9_, user0_.first_name as first_na9_9_, user0_.lang_key as lang_ke10_9_, user0_.last_name as last_na11_9_, user0_.login as login12_9_, user0_.password_hash as passwor13_9_, user0_.reset_date as reset_d14_9_, user0_.reset_key as reset_k15_9_ from jhi_user user0_ where user0_.reset_key=?
+Hibernate: select user0_.id as id1_9_, user0_.created_by as created_2_9_, user0_.created_date as created_3_9_, user0_.last_modified_by as last_mod4_9_, user0_.last_modified_date as last_mod5_9_, user0_.activated as activate6_9_, user0_.activation_key as activati7_9_, user0_.email as email8_9_, user0_.first_name as first_na9_9_, user0_.lang_key as lang_ke10_9_, user0_.last_name as last_na11_9_, user0_.login as login12_9_, user0_.password_hash as passwor13_9_, user0_.reset_date as reset_d14_9_, user0_.reset_key as reset_k15_9_ from jhi_user user0_ where user0_.activated=0 and user0_.created_date<?
+Hibernate: select user0_.id as id1_9_, user0_.created_by as created_2_9_, user0_.created_date as created_3_9_, user0_.last_modified_by as last_mod4_9_, user0_.last_modified_date as last_mod5_9_, user0_.activated as activate6_9_, user0_.activation_key as activati7_9_, user0_.email as email8_9_, user0_.first_name as first_na9_9_, user0_.lang_key as lang_ke10_9_, user0_.last_name as last_na11_9_, user0_.login as login12_9_, user0_.password_hash as passwor13_9_, user0_.reset_date as reset_d14_9_, user0_.reset_key as reset_k15_9_ from jhi_user user0_ where user0_.activated=0 and user0_.created_date<?
+Hibernate: select user0_.id as id1_9_, user0_.created_by as created_2_9_, user0_.created_date as created_3_9_, user0_.last_modified_by as last_mod4_9_, user0_.last_modified_date as last_mod5_9_, user0_.activated as activate6_9_, user0_.activation_key as activati7_9_, user0_.email as email8_9_, user0_.first_name as first_na9_9_, user0_.lang_key as lang_ke10_9_, user0_.last_name as last_na11_9_, user0_.login as login12_9_, user0_.password_hash as passwor13_9_, user0_.reset_date as reset_d14_9_, user0_.reset_key as reset_k15_9_ from jhi_user user0_ where user0_.login=?
+Hibernate: select persistent0_.series as series1_8_, persistent0_.ip_address as ip_addre2_8_, persistent0_.token_date as token_da3_8_, persistent0_.token_value as token_va4_8_, persistent0_.user_id as user_id6_8_, persistent0_.user_agent as user_age5_8_ from jhi_persistent_token persistent0_ left outer join jhi_user user1_ on persistent0_.user_id=user1_.id where user1_.id=?
+Hibernate: select persistent0_.series as series1_8_0_, persistent0_.ip_address as ip_addre2_8_0_, persistent0_.token_date as token_da3_8_0_, persistent0_.token_value as token_va4_8_0_, persistent0_.user_id as user_id6_8_0_, persistent0_.user_agent as user_age5_8_0_ from jhi_persistent_token persistent0_ where persistent0_.series=?
+Hibernate: insert into jhi_persistent_token (ip_address, token_date, token_value, user_id, user_agent, series) values (?, ?, ?, ?, ?, ?)
+Hibernate: select persistent0_.series as series1_8_0_, persistent0_.ip_address as ip_addre2_8_0_, persistent0_.token_date as token_da3_8_0_, persistent0_.token_value as token_va4_8_0_, persistent0_.user_id as user_id6_8_0_, persistent0_.user_agent as user_age5_8_0_ from jhi_persistent_token persistent0_ where persistent0_.series=?
+Hibernate: insert into jhi_persistent_token (ip_address, token_date, token_value, user_id, user_agent, series) values (?, ?, ?, ?, ?, ?)
+Hibernate: select persistent0_.series as series1_8_, persistent0_.ip_address as ip_addre2_8_, persistent0_.token_date as token_da3_8_, persistent0_.token_value as token_va4_8_, persistent0_.user_id as user_id6_8_, persistent0_.user_agent as user_age5_8_ from jhi_persistent_token persistent0_ left outer join jhi_user user1_ on persistent0_.user_id=user1_.id where user1_.id=?
+Hibernate: select persistent0_.series as series1_8_, persistent0_.ip_address as ip_addre2_8_, persistent0_.token_date as token_da3_8_, persistent0_.token_value as token_va4_8_, persistent0_.user_id as user_id6_8_, persistent0_.user_agent as user_age5_8_ from jhi_persistent_token persistent0_ where persistent0_.token_date<?
+2016-10-24 19:49:01.465 DEBUG 27162 --- [           main] c.elec5619.meetfit.service.UserService   : Deleting token 2222-2222
+Hibernate: select persistent0_.user_id as user_id6_9_0_, persistent0_.series as series1_8_0_, persistent0_.series as series1_8_1_, persistent0_.ip_address as ip_addre2_8_1_, persistent0_.token_date as token_da3_8_1_, persistent0_.token_value as token_va4_8_1_, persistent0_.user_id as user_id6_8_1_, persistent0_.user_agent as user_age5_8_1_ from jhi_persistent_token persistent0_ where persistent0_.user_id=?
+Hibernate: delete from jhi_persistent_token where series=?
+Hibernate: select persistent0_.series as series1_8_, persistent0_.ip_address as ip_addre2_8_, persistent0_.token_date as token_da3_8_, persistent0_.token_value as token_va4_8_, persistent0_.user_id as user_id6_8_, persistent0_.user_agent as user_age5_8_ from jhi_persistent_token persistent0_ left outer join jhi_user user1_ on persistent0_.user_id=user1_.id where user1_.id=?
+Hibernate: select authority0_.name as name1_5_0_ from jhi_authority authority0_ where authority0_.name=?
+Hibernate: insert into jhi_user (id, created_by, created_date, last_modified_by, last_modified_date, activated, activation_key, email, first_name, lang_key, last_name, login, password_hash, reset_date, reset_key) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2016-10-24 19:49:01.617 DEBUG 27162 --- [           main] c.elec5619.meetfit.service.UserService   : Created Information for User: User{login='johndoe', firstName='John', lastName='Doe', email='john.doe@localhost', activated='false', langKey='en-US', activationKey='57321794335874270828'}
+2016-10-24 19:49:01.621 DEBUG 27162 --- [           main] c.elec5619.meetfit.service.UserService   : Reset user password for reset key 00474635859683385280
+Hibernate: update jhi_user set created_date=?, last_modified_by=?, last_modified_date=?, activated=?, activation_key=?, email=?, first_name=?, lang_key=?, last_name=?, login=?, password_hash=?, reset_date=?, reset_key=? where id=?
+Hibernate: insert into jhi_user_authority (user_id, authority_name) values (?, ?)
+Hibernate: select user0_.id as id1_9_, user0_.created_by as created_2_9_, user0_.created_date as created_3_9_, user0_.last_modified_by as last_mod4_9_, user0_.last_modified_date as last_mod5_9_, user0_.activated as activate6_9_, user0_.activation_key as activati7_9_, user0_.email as email8_9_, user0_.first_name as first_na9_9_, user0_.lang_key as lang_ke10_9_, user0_.last_name as last_na11_9_, user0_.login as login12_9_, user0_.password_hash as passwor13_9_, user0_.reset_date as reset_d14_9_, user0_.reset_key as reset_k15_9_ from jhi_user user0_ where user0_.reset_key=?
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 29.091 sec - in com.elec5619.meetfit.service.UserServiceIntTest
+Running com.elec5619.meetfit.web.rest.AccountResourceIntTest
+Hibernate: select user0_.id as id1_9_, user0_.created_by as created_2_9_, user0_.created_date as created_3_9_, user0_.last_modified_by as last_mod4_9_, user0_.last_modified_date as last_mod5_9_, user0_.activated as activate6_9_, user0_.activation_key as activati7_9_, user0_.email as email8_9_, user0_.first_name as first_na9_9_, user0_.lang_key as lang_ke10_9_, user0_.last_name as last_na11_9_, user0_.login as login12_9_, user0_.password_hash as passwor13_9_, user0_.reset_date as reset_d14_9_, user0_.reset_key as reset_k15_9_ from jhi_user user0_ where user0_.email=?
+Hibernate: select user0_.id as id1_9_, user0_.created_by as created_2_9_, user0_.created_date as created_3_9_, user0_.last_modified_by as last_mod4_9_, user0_.last_modified_date as last_mod5_9_, user0_.activated as activate6_9_, user0_.activation_key as activati7_9_, user0_.email as email8_9_, user0_.first_name as first_na9_9_, user0_.lang_key as lang_ke10_9_, user0_.last_name as last_na11_9_, user0_.login as login12_9_, user0_.password_hash as passwor13_9_, user0_.reset_date as reset_d14_9_, user0_.reset_key as reset_k15_9_ from jhi_user user0_ where user0_.login=?
+Hibernate: select user0_.id as id1_9_, user0_.created_by as created_2_9_, user0_.created_date as created_3_9_, user0_.last_modified_by as last_mod4_9_, user0_.last_modified_date as last_mod5_9_, user0_.activated as activate6_9_, user0_.activation_key as activati7_9_, user0_.email as email8_9_, user0_.first_name as first_na9_9_, user0_.lang_key as lang_ke10_9_, user0_.last_name as last_na11_9_, user0_.login as login12_9_, user0_.password_hash as passwor13_9_, user0_.reset_date as reset_d14_9_, user0_.reset_key as reset_k15_9_ from jhi_user user0_ where user0_.email=?
+Hibernate: select user0_.id as id1_9_, user0_.created_by as created_2_9_, user0_.created_date as created_3_9_, user0_.last_modified_by as last_mod4_9_, user0_.last_modified_date as last_mod5_9_, user0_.activated as activate6_9_, user0_.activation_key as activati7_9_, user0_.email as email8_9_, user0_.first_name as first_na9_9_, user0_.lang_key as lang_ke10_9_, user0_.last_name as last_na11_9_, user0_.login as login12_9_, user0_.password_hash as passwor13_9_, user0_.reset_date as reset_d14_9_, user0_.reset_key as reset_k15_9_ from jhi_user user0_ where user0_.login=?
+Hibernate: select user0_.id as id1_9_, user0_.created_by as created_2_9_, user0_.created_date as created_3_9_, user0_.last_modified_by as last_mod4_9_, user0_.last_modified_date as last_mod5_9_, user0_.activated as activate6_9_, user0_.activation_key as activati7_9_, user0_.email as email8_9_, user0_.first_name as first_na9_9_, user0_.lang_key as lang_ke10_9_, user0_.last_name as last_na11_9_, user0_.login as login12_9_, user0_.password_hash as passwor13_9_, user0_.reset_date as reset_d14_9_, user0_.reset_key as reset_k15_9_ from jhi_user user0_ where user0_.login=?
+Hibernate: select user0_.id as id1_9_, user0_.created_by as created_2_9_, user0_.created_date as created_3_9_, user0_.last_modified_by as last_mod4_9_, user0_.last_modified_date as last_mod5_9_, user0_.activated as activate6_9_, user0_.activation_key as activati7_9_, user0_.email as email8_9_, user0_.first_name as first_na9_9_, user0_.lang_key as lang_ke10_9_, user0_.last_name as last_na11_9_, user0_.login as login12_9_, user0_.password_hash as passwor13_9_, user0_.reset_date as reset_d14_9_, user0_.reset_key as reset_k15_9_ from jhi_user user0_ where user0_.email=?
+Hibernate: select authority0_.name as name1_5_0_ from jhi_authority authority0_ where authority0_.name=?
+Hibernate: insert into jhi_user (id, created_by, created_date, last_modified_by, last_modified_date, activated, activation_key, email, first_name, lang_key, last_name, login, password_hash, reset_date, reset_key) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2016-10-24 19:49:03.459 DEBUG 27162 --- [           main] c.elec5619.meetfit.service.UserService   : Created Information for User: User{login='john', firstName='John', lastName='Smith', email='john@example.com', activated='false', langKey='en', activationKey='04551426018933498486'}
+Hibernate: select user0_.id as id1_9_, user0_.created_by as created_2_9_, user0_.created_date as created_3_9_, user0_.last_modified_by as last_mod4_9_, user0_.last_modified_date as last_mod5_9_, user0_.activated as activate6_9_, user0_.activation_key as activati7_9_, user0_.email as email8_9_, user0_.first_name as first_na9_9_, user0_.lang_key as lang_ke10_9_, user0_.last_name as last_na11_9_, user0_.login as login12_9_, user0_.password_hash as passwor13_9_, user0_.reset_date as reset_d14_9_, user0_.reset_key as reset_k15_9_ from jhi_user user0_ where user0_.login=?
+Hibernate: select user0_.id as id1_9_, user0_.created_by as created_2_9_, user0_.created_date as created_3_9_, user0_.last_modified_by as last_mod4_9_, user0_.last_modified_date as last_mod5_9_, user0_.activated as activate6_9_, user0_.activation_key as activati7_9_, user0_.email as email8_9_, user0_.first_name as first_na9_9_, user0_.lang_key as lang_ke10_9_, user0_.last_name as last_na11_9_, user0_.login as login12_9_, user0_.password_hash as passwor13_9_, user0_.reset_date as reset_d14_9_, user0_.reset_key as reset_k15_9_ from jhi_user user0_ where user0_.email=?
+Hibernate: select user0_.id as id1_9_, user0_.created_by as created_2_9_, user0_.created_date as created_3_9_, user0_.last_modified_by as last_mod4_9_, user0_.last_modified_date as last_mod5_9_, user0_.activated as activate6_9_, user0_.activation_key as activati7_9_, user0_.email as email8_9_, user0_.first_name as first_na9_9_, user0_.lang_key as lang_ke10_9_, user0_.last_name as last_na11_9_, user0_.login as login12_9_, user0_.password_hash as passwor13_9_, user0_.reset_date as reset_d14_9_, user0_.reset_key as reset_k15_9_ from jhi_user user0_ where user0_.login=?
+Hibernate: select user0_.id as id1_9_, user0_.created_by as created_2_9_, user0_.created_date as created_3_9_, user0_.last_modified_by as last_mod4_9_, user0_.last_modified_date as last_mod5_9_, user0_.activated as activate6_9_, user0_.activation_key as activati7_9_, user0_.email as email8_9_, user0_.first_name as first_na9_9_, user0_.lang_key as lang_ke10_9_, user0_.last_name as last_na11_9_, user0_.login as login12_9_, user0_.password_hash as passwor13_9_, user0_.reset_date as reset_d14_9_, user0_.reset_key as reset_k15_9_ from jhi_user user0_ where user0_.email=?
+Hibernate: select authority0_.name as name1_5_0_ from jhi_authority authority0_ where authority0_.name=?
+Hibernate: insert into jhi_user (id, created_by, created_date, last_modified_by, last_modified_date, activated, activation_key, email, first_name, lang_key, last_name, login, password_hash, reset_date, reset_key) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2016-10-24 19:49:03.784 DEBUG 27162 --- [           main] c.elec5619.meetfit.service.UserService   : Created Information for User: User{login='badguy', firstName='Bad', lastName='Guy', email='badguy@example.com', activated='false', langKey='en', activationKey='57169481136508971064'}
+Hibernate: select user0_.id as id1_9_, user0_.created_by as created_2_9_, user0_.created_date as created_3_9_, user0_.last_modified_by as last_mod4_9_, user0_.last_modified_date as last_mod5_9_, user0_.activated as activate6_9_, user0_.activation_key as activati7_9_, user0_.email as email8_9_, user0_.first_name as first_na9_9_, user0_.lang_key as lang_ke10_9_, user0_.last_name as last_na11_9_, user0_.login as login12_9_, user0_.password_hash as passwor13_9_, user0_.reset_date as reset_d14_9_, user0_.reset_key as reset_k15_9_ from jhi_user user0_ where user0_.login=?
+Hibernate: select user0_.id as id1_9_, user0_.created_by as created_2_9_, user0_.created_date as created_3_9_, user0_.last_modified_by as last_mod4_9_, user0_.last_modified_date as last_mod5_9_, user0_.activated as activate6_9_, user0_.activation_key as activati7_9_, user0_.email as email8_9_, user0_.first_name as first_na9_9_, user0_.lang_key as lang_ke10_9_, user0_.last_name as last_na11_9_, user0_.login as login12_9_, user0_.password_hash as passwor13_9_, user0_.reset_date as reset_d14_9_, user0_.reset_key as reset_k15_9_ from jhi_user user0_ where user0_.login=?
+Hibernate: select user0_.id as id1_9_, user0_.created_by as created_2_9_, user0_.created_date as created_3_9_, user0_.last_modified_by as last_mod4_9_, user0_.last_modified_date as last_mod5_9_, user0_.activated as activate6_9_, user0_.activation_key as activati7_9_, user0_.email as email8_9_, user0_.first_name as first_na9_9_, user0_.lang_key as lang_ke10_9_, user0_.last_name as last_na11_9_, user0_.login as login12_9_, user0_.password_hash as passwor13_9_, user0_.reset_date as reset_d14_9_, user0_.reset_key as reset_k15_9_ from jhi_user user0_ where user0_.email=?
+Hibernate: select authority0_.name as name1_5_0_ from jhi_authority authority0_ where authority0_.name=?
+Hibernate: insert into jhi_user (id, created_by, created_date, last_modified_by, last_modified_date, activated, activation_key, email, first_name, lang_key, last_name, login, password_hash, reset_date, reset_key) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2016-10-24 19:49:04.183 DEBUG 27162 --- [           main] c.elec5619.meetfit.service.UserService   : Created Information for User: User{login='john', firstName='John', lastName='Doe', email='john@example.com', activated='false', langKey='en', activationKey='24830344131855607964'}
+Hibernate: select user0_.id as id1_9_, user0_.created_by as created_2_9_, user0_.created_date as created_3_9_, user0_.last_modified_by as last_mod4_9_, user0_.last_modified_date as last_mod5_9_, user0_.activated as activate6_9_, user0_.activation_key as activati7_9_, user0_.email as email8_9_, user0_.first_name as first_na9_9_, user0_.lang_key as lang_ke10_9_, user0_.last_name as last_na11_9_, user0_.login as login12_9_, user0_.password_hash as passwor13_9_, user0_.reset_date as reset_d14_9_, user0_.reset_key as reset_k15_9_ from jhi_user user0_ where user0_.login=?
+Hibernate: select user0_.id as id1_9_, user0_.created_by as created_2_9_, user0_.created_date as created_3_9_, user0_.last_modified_by as last_mod4_9_, user0_.last_modified_date as last_mod5_9_, user0_.activated as activate6_9_, user0_.activation_key as activati7_9_, user0_.email as email8_9_, user0_.first_name as first_na9_9_, user0_.lang_key as lang_ke10_9_, user0_.last_name as last_na11_9_, user0_.login as login12_9_, user0_.password_hash as passwor13_9_, user0_.reset_date as reset_d14_9_, user0_.reset_key as reset_k15_9_ from jhi_user user0_ where user0_.email=?
+Hibernate: select user0_.id as id1_9_, user0_.created_by as created_2_9_, user0_.created_date as created_3_9_, user0_.last_modified_by as last_mod4_9_, user0_.last_modified_date as last_mod5_9_, user0_.activated as activate6_9_, user0_.activation_key as activati7_9_, user0_.email as email8_9_, user0_.first_name as first_na9_9_, user0_.lang_key as lang_ke10_9_, user0_.last_name as last_na11_9_, user0_.login as login12_9_, user0_.password_hash as passwor13_9_, user0_.reset_date as reset_d14_9_, user0_.reset_key as reset_k15_9_ from jhi_user user0_ where user0_.login=?
+Hibernate: select user0_.id as id1_9_, user0_.created_by as created_2_9_, user0_.created_date as created_3_9_, user0_.last_modified_by as last_mod4_9_, user0_.last_modified_date as last_mod5_9_, user0_.activated as activate6_9_, user0_.activation_key as activati7_9_, user0_.email as email8_9_, user0_.first_name as first_na9_9_, user0_.lang_key as lang_ke10_9_, user0_.last_name as last_na11_9_, user0_.login as login12_9_, user0_.password_hash as passwor13_9_, user0_.reset_date as reset_d14_9_, user0_.reset_key as reset_k15_9_ from jhi_user user0_ where user0_.login=?
+Hibernate: select user0_.id as id1_9_, user0_.created_by as created_2_9_, user0_.created_date as created_3_9_, user0_.last_modified_by as last_mod4_9_, user0_.last_modified_date as last_mod5_9_, user0_.activated as activate6_9_, user0_.activation_key as activati7_9_, user0_.email as email8_9_, user0_.first_name as first_na9_9_, user0_.lang_key as lang_ke10_9_, user0_.last_name as last_na11_9_, user0_.login as login12_9_, user0_.password_hash as passwor13_9_, user0_.reset_date as reset_d14_9_, user0_.reset_key as reset_k15_9_ from jhi_user user0_ where user0_.email=?
+Hibernate: select authority0_.name as name1_5_0_ from jhi_authority authority0_ where authority0_.name=?
+Hibernate: insert into jhi_user (id, created_by, created_date, last_modified_by, last_modified_date, activated, activation_key, email, first_name, lang_key, last_name, login, password_hash, reset_date, reset_key) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2016-10-24 19:49:04.475 DEBUG 27162 --- [           main] c.elec5619.meetfit.service.UserService   : Created Information for User: User{login='alice', firstName='Alice', lastName='Something', email='alice@example.com', activated='false', langKey='en', activationKey='99169027149704690006'}
+Hibernate: select user0_.id as id1_9_, user0_.created_by as created_2_9_, user0_.created_date as created_3_9_, user0_.last_modified_by as last_mod4_9_, user0_.last_modified_date as last_mod5_9_, user0_.activated as activate6_9_, user0_.activation_key as activati7_9_, user0_.email as email8_9_, user0_.first_name as first_na9_9_, user0_.lang_key as lang_ke10_9_, user0_.last_name as last_na11_9_, user0_.login as login12_9_, user0_.password_hash as passwor13_9_, user0_.reset_date as reset_d14_9_, user0_.reset_key as reset_k15_9_ from jhi_user user0_ where user0_.login=?
+Hibernate: select user0_.id as id1_9_, user0_.created_by as created_2_9_, user0_.created_date as created_3_9_, user0_.last_modified_by as last_mod4_9_, user0_.last_modified_date as last_mod5_9_, user0_.activated as activate6_9_, user0_.activation_key as activati7_9_, user0_.email as email8_9_, user0_.first_name as first_na9_9_, user0_.lang_key as lang_ke10_9_, user0_.last_name as last_na11_9_, user0_.login as login12_9_, user0_.password_hash as passwor13_9_, user0_.reset_date as reset_d14_9_, user0_.reset_key as reset_k15_9_ from jhi_user user0_ where user0_.email=?
+2016-10-24 19:49:04.590 DEBUG 27162 --- [           main] c.e.meetfit.web.rest.AccountResource     : REST request to check if the current user is authenticated
+Hibernate: select user0_.id as id1_9_, user0_.created_by as created_2_9_, user0_.created_date as created_3_9_, user0_.last_modified_by as last_mod4_9_, user0_.last_modified_date as last_mod5_9_, user0_.activated as activate6_9_, user0_.activation_key as activati7_9_, user0_.email as email8_9_, user0_.first_name as first_na9_9_, user0_.lang_key as lang_ke10_9_, user0_.last_name as last_na11_9_, user0_.login as login12_9_, user0_.password_hash as passwor13_9_, user0_.reset_date as reset_d14_9_, user0_.reset_key as reset_k15_9_ from jhi_user user0_ where user0_.login=?
+Hibernate: select user0_.id as id1_9_, user0_.created_by as created_2_9_, user0_.created_date as created_3_9_, user0_.last_modified_by as last_mod4_9_, user0_.last_modified_date as last_mod5_9_, user0_.activated as activate6_9_, user0_.activation_key as activati7_9_, user0_.email as email8_9_, user0_.first_name as first_na9_9_, user0_.lang_key as lang_ke10_9_, user0_.last_name as last_na11_9_, user0_.login as login12_9_, user0_.password_hash as passwor13_9_, user0_.reset_date as reset_d14_9_, user0_.reset_key as reset_k15_9_ from jhi_user user0_ where user0_.email=?
+Hibernate: select authority0_.name as name1_5_0_ from jhi_authority authority0_ where authority0_.name=?
+Hibernate: insert into jhi_user (id, created_by, created_date, last_modified_by, last_modified_date, activated, activation_key, email, first_name, lang_key, last_name, login, password_hash, reset_date, reset_key) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2016-10-24 19:49:04.874 DEBUG 27162 --- [           main] c.elec5619.meetfit.service.UserService   : Created Information for User: User{login='joe', firstName='Joe', lastName='Shmoe', email='joe@example.com', activated='false', langKey='en', activationKey='82055880397800662517'}
+Hibernate: select user0_.id as id1_9_, user0_.created_by as created_2_9_, user0_.created_date as created_3_9_, user0_.last_modified_by as last_mod4_9_, user0_.last_modified_date as last_mod5_9_, user0_.activated as activate6_9_, user0_.activation_key as activati7_9_, user0_.email as email8_9_, user0_.first_name as first_na9_9_, user0_.lang_key as lang_ke10_9_, user0_.last_name as last_na11_9_, user0_.login as login12_9_, user0_.password_hash as passwor13_9_, user0_.reset_date as reset_d14_9_, user0_.reset_key as reset_k15_9_ from jhi_user user0_ where user0_.login=?
+2016-10-24 19:49:04.956 DEBUG 27162 --- [           main] c.e.meetfit.web.rest.AccountResource     : REST request to check if the current user is authenticated
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.55 sec - in com.elec5619.meetfit.web.rest.AccountResourceIntTest
+Running com.elec5619.meetfit.web.rest.AchievedbadgesResourceIntTest
+Hibernate: insert into achievedbadges (id, badges_id, points, type, user_id) values (null, ?, ?, ?, ?)
+Hibernate: select achievedba0_.id as id1_0_, achievedba0_.badges_id as badges_i4_0_, achievedba0_.points as points2_0_, achievedba0_.type as type3_0_, achievedba0_.user_id as user_id5_0_ from achievedbadges achievedba0_
+2016-10-24 19:49:05.350 DEBUG 27162 --- [           main] c.e.m.web.rest.AchievedbadgesResource    : REST request to update Achievedbadges : Achievedbadges{id=1, points='2', type='BBBBB'}
+Hibernate: select achievedba0_.id as id1_0_, achievedba0_.badges_id as badges_i4_0_, achievedba0_.points as points2_0_, achievedba0_.type as type3_0_, achievedba0_.user_id as user_id5_0_ from achievedbadges achievedba0_
+2016-10-24 19:49:05.412 DEBUG 27162 --- [           main] c.e.m.web.rest.AchievedbadgesResource    : REST request to save Achievedbadges : Achievedbadges{id=null, points='1', type='AAAAA'}
+Hibernate: insert into achievedbadges (id, badges_id, points, type, user_id) values (null, ?, ?, ?, ?)
+2016-10-24 19:49:05.454 DEBUG 27162 --- [           main] c.e.m.web.rest.AchievedbadgesResource    : REST request to get all Achievedbadges
+Hibernate: select achievedba0_.id as id1_0_, achievedba0_.badges_id as badges_i4_0_, achievedba0_.points as points2_0_, achievedba0_.type as type3_0_, achievedba0_.user_id as user_id5_0_ from achievedbadges achievedba0_ order by achievedba0_.points desc
+Hibernate: insert into achievedbadges (id, badges_id, points, type, user_id) values (null, ?, ?, ?, ?)
+Hibernate: select achievedba0_.id as id1_0_, achievedba0_.badges_id as badges_i4_0_, achievedba0_.points as points2_0_, achievedba0_.type as type3_0_, achievedba0_.user_id as user_id5_0_ from achievedbadges achievedba0_
+2016-10-24 19:49:05.530 DEBUG 27162 --- [           main] c.e.m.web.rest.AchievedbadgesResource    : REST request to delete Achievedbadges : 3
+Hibernate: delete from achievedbadges where id=?
+Hibernate: select achievedba0_.id as id1_0_, achievedba0_.badges_id as badges_i4_0_, achievedba0_.points as points2_0_, achievedba0_.type as type3_0_, achievedba0_.user_id as user_id5_0_ from achievedbadges achievedba0_
+Hibernate: insert into achievedbadges (id, badges_id, points, type, user_id) values (null, ?, ?, ?, ?)
+2016-10-24 19:49:05.575 DEBUG 27162 --- [           main] c.e.m.web.rest.AchievedbadgesResource    : REST request to get Achievedbadges : 4
+2016-10-24 19:49:05.618 DEBUG 27162 --- [           main] c.e.m.web.rest.AchievedbadgesResource    : REST request to get Achievedbadges : 9223372036854775807
+Hibernate: select achievedba0_.id as id1_0_0_, achievedba0_.badges_id as badges_i4_0_0_, achievedba0_.points as points2_0_0_, achievedba0_.type as type3_0_0_, achievedba0_.user_id as user_id5_0_0_, badges1_.id as id1_1_1_, badges1_.description as descript2_1_1_, badges1_.name as name3_1_1_, badges1_.points as points4_1_1_, user2_.id as id1_9_2_, user2_.created_by as created_2_9_2_, user2_.created_date as created_3_9_2_, user2_.last_modified_by as last_mod4_9_2_, user2_.last_modified_date as last_mod5_9_2_, user2_.activated as activate6_9_2_, user2_.activation_key as activati7_9_2_, user2_.email as email8_9_2_, user2_.first_name as first_na9_9_2_, user2_.lang_key as lang_ke10_9_2_, user2_.last_name as last_na11_9_2_, user2_.login as login12_9_2_, user2_.password_hash as passwor13_9_2_, user2_.reset_date as reset_d14_9_2_, user2_.reset_key as reset_k15_9_2_ from achievedbadges achievedba0_ left outer join badges badges1_ on achievedba0_.badges_id=badges1_.id left outer join jhi_user user2_ on achievedba0_.user_id=user2_.id where achievedba0_.id=?
+Tests run: 6, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.411 sec <<< FAILURE! - in com.elec5619.meetfit.web.rest.AchievedbadgesResourceIntTest
+updateAchievedbadges(com.elec5619.meetfit.web.rest.AchievedbadgesResourceIntTest)  Time elapsed: 0.088 sec  <<< ERROR!
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.NullPointerException
+	at com.elec5619.meetfit.web.rest.AchievedbadgesResource.updateAchievedbadges(AchievedbadgesResource.java:77)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:114)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at org.springframework.test.web.servlet.TestDispatcherServlet.service(TestDispatcherServlet.java:65)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.springframework.mock.web.MockFilterChain$ServletFilterProxy.doFilter(MockFilterChain.java:167)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:134)
+	at org.springframework.test.web.servlet.MockMvc.perform(MockMvc.java:155)
+	at com.elec5619.meetfit.web.rest.AchievedbadgesResourceIntTest.updateAchievedbadges(AchievedbadgesResourceIntTest.java:162)
+
+createAchievedbadges(com.elec5619.meetfit.web.rest.AchievedbadgesResourceIntTest)  Time elapsed: 0.021 sec  <<< ERROR!
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.NullPointerException
+	at com.elec5619.meetfit.web.rest.AchievedbadgesResource.createAchievedbadges(AchievedbadgesResource.java:53)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:114)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at org.springframework.test.web.servlet.TestDispatcherServlet.service(TestDispatcherServlet.java:65)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.springframework.mock.web.MockFilterChain$ServletFilterProxy.doFilter(MockFilterChain.java:167)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:134)
+	at org.springframework.test.web.servlet.MockMvc.perform(MockMvc.java:155)
+	at com.elec5619.meetfit.web.rest.AchievedbadgesResourceIntTest.createAchievedbadges(AchievedbadgesResourceIntTest.java:98)
+
+Running com.elec5619.meetfit.web.rest.AuditResourceIntTest
+Hibernate: select persistent0_.event_id as event_id1_6_, persistent0_.event_date as event_da2_6_, persistent0_.event_type as event_ty3_6_, persistent0_.principal as principa4_6_ from jhi_persistent_audit_event persistent0_
+Hibernate: select persistent0_.event_id as event_id1_6_0_, persistent0_.event_date as event_da2_6_0_, persistent0_.event_type as event_ty3_6_0_, persistent0_.principal as principa4_6_0_ from jhi_persistent_audit_event persistent0_ where persistent0_.event_id=?
+Hibernate: select persistent0_.event_id as event_id1_6_, persistent0_.event_date as event_da2_6_, persistent0_.event_type as event_ty3_6_, persistent0_.principal as principa4_6_ from jhi_persistent_audit_event persistent0_
+Hibernate: insert into jhi_persistent_audit_event (event_id, event_date, event_type, principal) values (null, ?, ?, ?)
+Hibernate: select count(persistent0_.event_id) as col_0_0_ from jhi_persistent_audit_event persistent0_ where persistent0_.event_date between ? and ?
+Hibernate: select persistent0_.event_id as event_id1_6_, persistent0_.event_date as event_da2_6_, persistent0_.event_type as event_ty3_6_, persistent0_.principal as principa4_6_ from jhi_persistent_audit_event persistent0_
+Hibernate: insert into jhi_persistent_audit_event (event_id, event_date, event_type, principal) values (null, ?, ?, ?)
+Hibernate: select count(persistent0_.event_id) as col_0_0_ from jhi_persistent_audit_event persistent0_
+Hibernate: select persistent0_.event_id as event_id1_6_, persistent0_.event_date as event_da2_6_, persistent0_.event_type as event_ty3_6_, persistent0_.principal as principa4_6_ from jhi_persistent_audit_event persistent0_ limit ?
+Hibernate: select persistent0_.event_id as event_id1_6_, persistent0_.event_date as event_da2_6_, persistent0_.event_type as event_ty3_6_, persistent0_.principal as principa4_6_ from jhi_persistent_audit_event persistent0_
+Hibernate: insert into jhi_persistent_audit_event (event_id, event_date, event_type, principal) values (null, ?, ?, ?)
+Hibernate: select count(persistent0_.event_id) as col_0_0_ from jhi_persistent_audit_event persistent0_ where persistent0_.event_date between ? and ?
+Hibernate: select persistent0_.event_id as event_id1_6_, persistent0_.event_date as event_da2_6_, persistent0_.event_type as event_ty3_6_, persistent0_.principal as principa4_6_ from jhi_persistent_audit_event persistent0_ where persistent0_.event_date between ? and ? limit ?
+Hibernate: select persistent0_.event_id as event_id1_6_, persistent0_.event_date as event_da2_6_, persistent0_.event_type as event_ty3_6_, persistent0_.principal as principa4_6_ from jhi_persistent_audit_event persistent0_
+Hibernate: insert into jhi_persistent_audit_event (event_id, event_date, event_type, principal) values (null, ?, ?, ?)
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.518 sec - in com.elec5619.meetfit.web.rest.AuditResourceIntTest
+Running com.elec5619.meetfit.web.rest.BadgesResourceIntTest
+Hibernate: insert into badges (id, description, name, points) values (null, ?, ?, ?)
+Hibernate: select badges0_.id as id1_1_, badges0_.description as descript2_1_, badges0_.name as name3_1_, badges0_.points as points4_1_ from badges badges0_
+2016-10-24 19:49:06.259 DEBUG 27162 --- [           main] c.e.meetfit.web.rest.BadgesResource      : REST request to update Badges : Badges{id=1, name='BBBBB', points='2', description='BBBBB'}
+Hibernate: update badges set description=?, name=?, points=? where id=?
+Hibernate: select badges0_.id as id1_1_, badges0_.description as descript2_1_, badges0_.name as name3_1_, badges0_.points as points4_1_ from badges badges0_
+Hibernate: insert into badges (id, description, name, points) values (null, ?, ?, ?)
+Hibernate: select badges0_.id as id1_1_, badges0_.description as descript2_1_, badges0_.name as name3_1_, badges0_.points as points4_1_ from badges badges0_
+2016-10-24 19:49:06.329 DEBUG 27162 --- [           main] c.e.meetfit.web.rest.BadgesResource      : REST request to delete Badges : 2
+Hibernate: delete from badges where id=?
+Hibernate: select badges0_.id as id1_1_, badges0_.description as descript2_1_, badges0_.name as name3_1_, badges0_.points as points4_1_ from badges badges0_
+Hibernate: insert into badges (id, description, name, points) values (null, ?, ?, ?)
+2016-10-24 19:49:06.385 DEBUG 27162 --- [           main] c.e.meetfit.web.rest.BadgesResource      : REST request to get all Badges
+Hibernate: select badges0_.id as id1_1_, badges0_.description as descript2_1_, badges0_.name as name3_1_, badges0_.points as points4_1_ from badges badges0_
+2016-10-24 19:49:06.424 DEBUG 27162 --- [           main] c.e.meetfit.web.rest.BadgesResource      : REST request to get Badges : 9223372036854775807
+Hibernate: select badges0_.id as id1_1_0_, badges0_.description as descript2_1_0_, badges0_.name as name3_1_0_, badges0_.points as points4_1_0_ from badges badges0_ where badges0_.id=?
+Hibernate: insert into badges (id, description, name, points) values (null, ?, ?, ?)
+2016-10-24 19:49:06.469 DEBUG 27162 --- [           main] c.e.meetfit.web.rest.BadgesResource      : REST request to get Badges : 4
+Hibernate: select badges0_.id as id1_1_, badges0_.description as descript2_1_, badges0_.name as name3_1_, badges0_.points as points4_1_ from badges badges0_
+2016-10-24 19:49:06.510 DEBUG 27162 --- [           main] c.e.meetfit.web.rest.BadgesResource      : REST request to save Badges : Badges{id=null, name='AAAAA', points='1', description='AAAAA'}
+Hibernate: insert into badges (id, description, name, points) values (null, ?, ?, ?)
+Hibernate: select badges0_.id as id1_1_, badges0_.description as descript2_1_, badges0_.name as name3_1_, badges0_.points as points4_1_ from badges badges0_
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.367 sec - in com.elec5619.meetfit.web.rest.BadgesResourceIntTest
+Running com.elec5619.meetfit.web.rest.EventResourceIntTest
+Hibernate: insert into jhi_user (id, created_by, created_date, last_modified_by, last_modified_date, activated, activation_key, email, first_name, lang_key, last_name, login, password_hash, reset_date, reset_key) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2016-10-24 19:49:06.618 DEBUG 27162 --- [           main] c.e.meetfit.web.rest.EventResource       : REST request to get Event : 9223372036854775807
+Hibernate: select event0_.id as id1_2_0_, event0_.description as descript2_2_0_, event0_.location as location3_2_0_, event0_.name as name4_2_0_, event0_.organiser_id as organise6_2_0_, event0_.time as time5_2_0_, user1_.id as id1_9_1_, user1_.created_by as created_2_9_1_, user1_.created_date as created_3_9_1_, user1_.last_modified_by as last_mod4_9_1_, user1_.last_modified_date as last_mod5_9_1_, user1_.activated as activate6_9_1_, user1_.activation_key as activati7_9_1_, user1_.email as email8_9_1_, user1_.first_name as first_na9_9_1_, user1_.lang_key as lang_ke10_9_1_, user1_.last_name as last_na11_9_1_, user1_.login as login12_9_1_, user1_.password_hash as passwor13_9_1_, user1_.reset_date as reset_d14_9_1_, user1_.reset_key as reset_k15_9_1_ from event event0_ inner join jhi_user user1_ on event0_.organiser_id=user1_.id where event0_.id=?
+Hibernate: insert into jhi_user (id, created_by, created_date, last_modified_by, last_modified_date, activated, activation_key, email, first_name, lang_key, last_name, login, password_hash, reset_date, reset_key) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: insert into event (id, description, location, name, organiser_id, time) values (null, ?, ?, ?, ?, ?)
+Hibernate: select event0_.id as id1_2_, event0_.description as descript2_2_, event0_.location as location3_2_, event0_.name as name4_2_, event0_.organiser_id as organise6_2_, event0_.time as time5_2_ from event event0_
+2016-10-24 19:49:06.698 DEBUG 27162 --- [           main] c.e.meetfit.web.rest.EventResource       : REST request to delete Event : 1
+Hibernate: delete from event where id=?
+Hibernate: select event0_.id as id1_2_, event0_.description as descript2_2_, event0_.location as location3_2_, event0_.name as name4_2_, event0_.organiser_id as organise6_2_, event0_.time as time5_2_ from event event0_
+Hibernate: insert into jhi_user (id, created_by, created_date, last_modified_by, last_modified_date, activated, activation_key, email, first_name, lang_key, last_name, login, password_hash, reset_date, reset_key) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: insert into event (id, description, location, name, organiser_id, time) values (null, ?, ?, ?, ?, ?)
+2016-10-24 19:49:06.754 DEBUG 27162 --- [           main] c.e.meetfit.web.rest.EventResource       : REST request to get all Events
+Hibernate: select event0_.id as id1_2_, event0_.description as descript2_2_, event0_.location as location3_2_, event0_.name as name4_2_, event0_.organiser_id as organise6_2_, event0_.time as time5_2_ from event event0_
+Hibernate: insert into jhi_user (id, created_by, created_date, last_modified_by, last_modified_date, activated, activation_key, email, first_name, lang_key, last_name, login, password_hash, reset_date, reset_key) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: insert into event (id, description, location, name, organiser_id, time) values (null, ?, ?, ?, ?, ?)
+Hibernate: select event0_.id as id1_2_, event0_.description as descript2_2_, event0_.location as location3_2_, event0_.name as name4_2_, event0_.organiser_id as organise6_2_, event0_.time as time5_2_ from event event0_
+2016-10-24 19:49:06.836 DEBUG 27162 --- [           main] c.e.meetfit.web.rest.EventResource       : REST request to update Event : Event{id=3, name='BBBBB', description='BBBBB', time='2016-10-25T02:49:06Z[UTC]', location='BBBBB'}
+Hibernate: update event set description=?, location=?, name=?, organiser_id=?, time=? where id=?
+Hibernate: select event0_.id as id1_2_, event0_.description as descript2_2_, event0_.location as location3_2_, event0_.name as name4_2_, event0_.organiser_id as organise6_2_, event0_.time as time5_2_ from event event0_
+Hibernate: insert into jhi_user (id, created_by, created_date, last_modified_by, last_modified_date, activated, activation_key, email, first_name, lang_key, last_name, login, password_hash, reset_date, reset_key) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select event0_.id as id1_2_, event0_.description as descript2_2_, event0_.location as location3_2_, event0_.name as name4_2_, event0_.organiser_id as organise6_2_, event0_.time as time5_2_ from event event0_
+2016-10-24 19:49:06.907 DEBUG 27162 --- [           main] c.e.meetfit.web.rest.EventResource       : REST request to save Event : Event{id=null, name='AAAAA', description='AAAAA', time='1970-01-01T00:00Z[UTC]', location='AAAAA'}
+Hibernate: insert into event (id, description, location, name, organiser_id, time) values (null, ?, ?, ?, ?, ?)
+Hibernate: select event0_.id as id1_2_, event0_.description as descript2_2_, event0_.location as location3_2_, event0_.name as name4_2_, event0_.organiser_id as organise6_2_, event0_.time as time5_2_ from event event0_
+Hibernate: insert into jhi_user (id, created_by, created_date, last_modified_by, last_modified_date, activated, activation_key, email, first_name, lang_key, last_name, login, password_hash, reset_date, reset_key) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select event0_.id as id1_2_, event0_.description as descript2_2_, event0_.location as location3_2_, event0_.name as name4_2_, event0_.organiser_id as organise6_2_, event0_.time as time5_2_ from event event0_
+Hibernate: select event0_.id as id1_2_, event0_.description as descript2_2_, event0_.location as location3_2_, event0_.name as name4_2_, event0_.organiser_id as organise6_2_, event0_.time as time5_2_ from event event0_
+Hibernate: insert into jhi_user (id, created_by, created_date, last_modified_by, last_modified_date, activated, activation_key, email, first_name, lang_key, last_name, login, password_hash, reset_date, reset_key) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select event0_.id as id1_2_, event0_.description as descript2_2_, event0_.location as location3_2_, event0_.name as name4_2_, event0_.organiser_id as organise6_2_, event0_.time as time5_2_ from event event0_
+Hibernate: select event0_.id as id1_2_, event0_.description as descript2_2_, event0_.location as location3_2_, event0_.name as name4_2_, event0_.organiser_id as organise6_2_, event0_.time as time5_2_ from event event0_
+Hibernate: insert into jhi_user (id, created_by, created_date, last_modified_by, last_modified_date, activated, activation_key, email, first_name, lang_key, last_name, login, password_hash, reset_date, reset_key) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select event0_.id as id1_2_, event0_.description as descript2_2_, event0_.location as location3_2_, event0_.name as name4_2_, event0_.organiser_id as organise6_2_, event0_.time as time5_2_ from event event0_
+Hibernate: select event0_.id as id1_2_, event0_.description as descript2_2_, event0_.location as location3_2_, event0_.name as name4_2_, event0_.organiser_id as organise6_2_, event0_.time as time5_2_ from event event0_
+Hibernate: insert into jhi_user (id, created_by, created_date, last_modified_by, last_modified_date, activated, activation_key, email, first_name, lang_key, last_name, login, password_hash, reset_date, reset_key) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: insert into event (id, description, location, name, organiser_id, time) values (null, ?, ?, ?, ?, ?)
+2016-10-24 19:49:07.203 DEBUG 27162 --- [           main] c.e.meetfit.web.rest.EventResource       : REST request to get Event : 5
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.684 sec - in com.elec5619.meetfit.web.rest.EventResourceIntTest
+Running com.elec5619.meetfit.web.rest.FitnesseventResourceIntTest
+Hibernate: insert into jhi_user (id, created_by, created_date, last_modified_by, last_modified_date, activated, activation_key, email, first_name, lang_key, last_name, login, password_hash, reset_date, reset_key) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select fitnesseve0_.id as id1_3_, fitnesseve0_.description as descript2_3_, fitnesseve0_.endtime as endtime3_3_, fitnesseve0_.location as location4_3_, fitnesseve0_.name as name5_3_, fitnesseve0_.organiser_id as organise7_3_, fitnesseve0_.starttime as starttim6_3_ from fitnessevent fitnesseve0_
+2016-10-24 19:49:07.342 DEBUG 27162 --- [           main] c.e.m.web.rest.FitnesseventResource      : REST request to save Fitnessevent : Fitnessevent{id=null, name='AAAAA', description='AAAAA', location='AAAAA', starttime='1970-01-01T00:00Z[UTC]', endtime='1970-01-01T00:00Z[UTC]'}
+Hibernate: insert into jhi_user (id, created_by, created_date, last_modified_by, last_modified_date, activated, activation_key, email, first_name, lang_key, last_name, login, password_hash, reset_date, reset_key) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: insert into fitnessevent (id, description, endtime, location, name, organiser_id, starttime) values (null, ?, ?, ?, ?, ?, ?)
+2016-10-24 19:49:07.398 DEBUG 27162 --- [           main] c.e.m.web.rest.FitnesseventResource      : REST request to get all Fitnessevents
+Hibernate: select fitnesseve0_.id as id1_3_, fitnesseve0_.description as descript2_3_, fitnesseve0_.endtime as endtime3_3_, fitnesseve0_.location as location4_3_, fitnesseve0_.name as name5_3_, fitnesseve0_.organiser_id as organise7_3_, fitnesseve0_.starttime as starttim6_3_ from fitnessevent fitnesseve0_
+Hibernate: insert into jhi_user (id, created_by, created_date, last_modified_by, last_modified_date, activated, activation_key, email, first_name, lang_key, last_name, login, password_hash, reset_date, reset_key) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: insert into fitnessevent (id, description, endtime, location, name, organiser_id, starttime) values (null, ?, ?, ?, ?, ?, ?)
+Hibernate: select fitnesseve0_.id as id1_3_, fitnesseve0_.description as descript2_3_, fitnesseve0_.endtime as endtime3_3_, fitnesseve0_.location as location4_3_, fitnesseve0_.name as name5_3_, fitnesseve0_.organiser_id as organise7_3_, fitnesseve0_.starttime as starttim6_3_ from fitnessevent fitnesseve0_
+2016-10-24 19:49:07.471 DEBUG 27162 --- [           main] c.e.m.web.rest.FitnesseventResource      : REST request to delete Fitnessevent : 2
+Hibernate: delete from fitnessevent where id=?
+Hibernate: select fitnesseve0_.id as id1_3_, fitnesseve0_.description as descript2_3_, fitnesseve0_.endtime as endtime3_3_, fitnesseve0_.location as location4_3_, fitnesseve0_.name as name5_3_, fitnesseve0_.organiser_id as organise7_3_, fitnesseve0_.starttime as starttim6_3_ from fitnessevent fitnesseve0_
+Hibernate: insert into jhi_user (id, created_by, created_date, last_modified_by, last_modified_date, activated, activation_key, email, first_name, lang_key, last_name, login, password_hash, reset_date, reset_key) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: insert into fitnessevent (id, description, endtime, location, name, organiser_id, starttime) values (null, ?, ?, ?, ?, ?, ?)
+Hibernate: select fitnesseve0_.id as id1_3_, fitnesseve0_.description as descript2_3_, fitnesseve0_.endtime as endtime3_3_, fitnesseve0_.location as location4_3_, fitnesseve0_.name as name5_3_, fitnesseve0_.organiser_id as organise7_3_, fitnesseve0_.starttime as starttim6_3_ from fitnessevent fitnesseve0_
+2016-10-24 19:49:07.552 DEBUG 27162 --- [           main] c.e.m.web.rest.FitnesseventResource      : REST request to update Fitnessevent : Fitnessevent{id=3, name='BBBBB', description='BBBBB', location='BBBBB', starttime='2016-10-25T02:49:07Z[UTC]', endtime='2016-10-25T02:49:07Z[UTC]'}
+Hibernate: update fitnessevent set description=?, endtime=?, location=?, name=?, organiser_id=?, starttime=? where id=?
+Hibernate: select fitnesseve0_.id as id1_3_, fitnesseve0_.description as descript2_3_, fitnesseve0_.endtime as endtime3_3_, fitnesseve0_.location as location4_3_, fitnesseve0_.name as name5_3_, fitnesseve0_.organiser_id as organise7_3_, fitnesseve0_.starttime as starttim6_3_ from fitnessevent fitnesseve0_
+Hibernate: insert into jhi_user (id, created_by, created_date, last_modified_by, last_modified_date, activated, activation_key, email, first_name, lang_key, last_name, login, password_hash, reset_date, reset_key) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select fitnesseve0_.id as id1_3_, fitnesseve0_.description as descript2_3_, fitnesseve0_.endtime as endtime3_3_, fitnesseve0_.location as location4_3_, fitnesseve0_.name as name5_3_, fitnesseve0_.organiser_id as organise7_3_, fitnesseve0_.starttime as starttim6_3_ from fitnessevent fitnesseve0_
+Hibernate: select fitnesseve0_.id as id1_3_, fitnesseve0_.description as descript2_3_, fitnesseve0_.endtime as endtime3_3_, fitnesseve0_.location as location4_3_, fitnesseve0_.name as name5_3_, fitnesseve0_.organiser_id as organise7_3_, fitnesseve0_.starttime as starttim6_3_ from fitnessevent fitnesseve0_
+Hibernate: insert into jhi_user (id, created_by, created_date, last_modified_by, last_modified_date, activated, activation_key, email, first_name, lang_key, last_name, login, password_hash, reset_date, reset_key) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select fitnesseve0_.id as id1_3_, fitnesseve0_.description as descript2_3_, fitnesseve0_.endtime as endtime3_3_, fitnesseve0_.location as location4_3_, fitnesseve0_.name as name5_3_, fitnesseve0_.organiser_id as organise7_3_, fitnesseve0_.starttime as starttim6_3_ from fitnessevent fitnesseve0_
+Hibernate: select fitnesseve0_.id as id1_3_, fitnesseve0_.description as descript2_3_, fitnesseve0_.endtime as endtime3_3_, fitnesseve0_.location as location4_3_, fitnesseve0_.name as name5_3_, fitnesseve0_.organiser_id as organise7_3_, fitnesseve0_.starttime as starttim6_3_ from fitnessevent fitnesseve0_
+Hibernate: insert into jhi_user (id, created_by, created_date, last_modified_by, last_modified_date, activated, activation_key, email, first_name, lang_key, last_name, login, password_hash, reset_date, reset_key) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2016-10-24 19:49:07.736 DEBUG 27162 --- [           main] c.e.m.web.rest.FitnesseventResource      : REST request to get Fitnessevent : 9223372036854775807
+Hibernate: select fitnesseve0_.id as id1_3_0_, user2_.id as id1_9_1_, fitnesseve0_.description as descript2_3_0_, fitnesseve0_.endtime as endtime3_3_0_, fitnesseve0_.location as location4_3_0_, fitnesseve0_.name as name5_3_0_, fitnesseve0_.organiser_id as organise7_3_0_, fitnesseve0_.starttime as starttim6_3_0_, user2_.created_by as created_2_9_1_, user2_.created_date as created_3_9_1_, user2_.last_modified_by as last_mod4_9_1_, user2_.last_modified_date as last_mod5_9_1_, user2_.activated as activate6_9_1_, user2_.activation_key as activati7_9_1_, user2_.email as email8_9_1_, user2_.first_name as first_na9_9_1_, user2_.lang_key as lang_ke10_9_1_, user2_.last_name as last_na11_9_1_, user2_.login as login12_9_1_, user2_.password_hash as passwor13_9_1_, user2_.reset_date as reset_d14_9_1_, user2_.reset_key as reset_k15_9_1_, attendings1_.fitnessevents_id as fitnesse1_3_0__, attendings1_.attendings_id as attendin2_4_0__ from fitnessevent fitnesseve0_ left outer join fitnessevent_attending attendings1_ on fitnesseve0_.id=attendings1_.fitnessevents_id left outer join jhi_user user2_ on attendings1_.attendings_id=user2_.id where fitnesseve0_.id=?
+Hibernate: insert into jhi_user (id, created_by, created_date, last_modified_by, last_modified_date, activated, activation_key, email, first_name, lang_key, last_name, login, password_hash, reset_date, reset_key) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select fitnesseve0_.id as id1_3_, fitnesseve0_.description as descript2_3_, fitnesseve0_.endtime as endtime3_3_, fitnesseve0_.location as location4_3_, fitnesseve0_.name as name5_3_, fitnesseve0_.organiser_id as organise7_3_, fitnesseve0_.starttime as starttim6_3_ from fitnessevent fitnesseve0_
+Hibernate: select fitnesseve0_.id as id1_3_, fitnesseve0_.description as descript2_3_, fitnesseve0_.endtime as endtime3_3_, fitnesseve0_.location as location4_3_, fitnesseve0_.name as name5_3_, fitnesseve0_.organiser_id as organise7_3_, fitnesseve0_.starttime as starttim6_3_ from fitnessevent fitnesseve0_
+Hibernate: insert into jhi_user (id, created_by, created_date, last_modified_by, last_modified_date, activated, activation_key, email, first_name, lang_key, last_name, login, password_hash, reset_date, reset_key) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select fitnesseve0_.id as id1_3_, fitnesseve0_.description as descript2_3_, fitnesseve0_.endtime as endtime3_3_, fitnesseve0_.location as location4_3_, fitnesseve0_.name as name5_3_, fitnesseve0_.organiser_id as organise7_3_, fitnesseve0_.starttime as starttim6_3_ from fitnessevent fitnesseve0_
+Hibernate: select fitnesseve0_.id as id1_3_, fitnesseve0_.description as descript2_3_, fitnesseve0_.endtime as endtime3_3_, fitnesseve0_.location as location4_3_, fitnesseve0_.name as name5_3_, fitnesseve0_.organiser_id as organise7_3_, fitnesseve0_.starttime as starttim6_3_ from fitnessevent fitnesseve0_
+Hibernate: insert into jhi_user (id, created_by, created_date, last_modified_by, last_modified_date, activated, activation_key, email, first_name, lang_key, last_name, login, password_hash, reset_date, reset_key) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: insert into fitnessevent (id, description, endtime, location, name, organiser_id, starttime) values (null, ?, ?, ?, ?, ?, ?)
+2016-10-24 19:49:07.921 DEBUG 27162 --- [           main] c.e.m.web.rest.FitnesseventResource      : REST request to get Fitnessevent : 4
+Hibernate: select fitnesseve0_.id as id1_3_0_, user2_.id as id1_9_1_, fitnesseve0_.description as descript2_3_0_, fitnesseve0_.endtime as endtime3_3_0_, fitnesseve0_.location as location4_3_0_, fitnesseve0_.name as name5_3_0_, fitnesseve0_.organiser_id as organise7_3_0_, fitnesseve0_.starttime as starttim6_3_0_, user2_.created_by as created_2_9_1_, user2_.created_date as created_3_9_1_, user2_.last_modified_by as last_mod4_9_1_, user2_.last_modified_date as last_mod5_9_1_, user2_.activated as activate6_9_1_, user2_.activation_key as activati7_9_1_, user2_.email as email8_9_1_, user2_.first_name as first_na9_9_1_, user2_.lang_key as lang_ke10_9_1_, user2_.last_name as last_na11_9_1_, user2_.login as login12_9_1_, user2_.password_hash as passwor13_9_1_, user2_.reset_date as reset_d14_9_1_, user2_.reset_key as reset_k15_9_1_, attendings1_.fitnessevents_id as fitnesse1_3_0__, attendings1_.attendings_id as attendin2_4_0__ from fitnessevent fitnesseve0_ left outer join fitnessevent_attending attendings1_ on fitnesseve0_.id=attendings1_.fitnessevents_id left outer join jhi_user user2_ on attendings1_.attendings_id=user2_.id where fitnesseve0_.id=?
+Tests run: 10, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.714 sec <<< FAILURE! - in com.elec5619.meetfit.web.rest.FitnesseventResourceIntTest
+createFitnessevent(com.elec5619.meetfit.web.rest.FitnesseventResourceIntTest)  Time elapsed: 0.059 sec  <<< ERROR!
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.NullPointerException
+	at com.elec5619.meetfit.web.rest.FitnesseventResource.createFitnessevent(FitnesseventResource.java:60)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:114)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:707)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at org.springframework.test.web.servlet.TestDispatcherServlet.service(TestDispatcherServlet.java:65)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.springframework.mock.web.MockFilterChain$ServletFilterProxy.doFilter(MockFilterChain.java:167)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:134)
+	at org.springframework.test.web.servlet.MockMvc.perform(MockMvc.java:155)
+	at com.elec5619.meetfit.web.rest.FitnesseventResourceIntTest.createFitnessevent(FitnesseventResourceIntTest.java:122)
+
+Running com.elec5619.meetfit.web.rest.ProfileResourceIntTest
+Hibernate: insert into profile (id, dob, height, location, owner_id, weight) values (null, ?, ?, ?, ?, ?)
+Hibernate: select profile0_.id as id1_11_, profile0_.dob as dob2_11_, profile0_.height as height3_11_, profile0_.location as location4_11_, profile0_.owner_id as owner_id6_11_, profile0_.weight as weight5_11_ from profile profile0_
+2016-10-24 19:49:08.029 DEBUG 27162 --- [           main] c.e.meetfit.web.rest.ProfileResource     : REST request to update Profile : Profile{id=1, height='2', weight='2', location='BBBBB', dob='2016-10-25T02:49:07Z[UTC]'}
+Hibernate: update profile set dob=?, height=?, location=?, owner_id=?, weight=? where id=?
+Hibernate: select profile0_.id as id1_11_, profile0_.dob as dob2_11_, profile0_.height as height3_11_, profile0_.location as location4_11_, profile0_.owner_id as owner_id6_11_, profile0_.weight as weight5_11_ from profile profile0_
+Hibernate: insert into profile (id, dob, height, location, owner_id, weight) values (null, ?, ?, ?, ?, ?)
+2016-10-24 19:49:08.079 DEBUG 27162 --- [           main] c.e.meetfit.web.rest.ProfileResource     : REST request to get all Profiles
+Hibernate: select profile0_.id as id1_11_, profile0_.dob as dob2_11_, profile0_.height as height3_11_, profile0_.location as location4_11_, profile0_.owner_id as owner_id6_11_, profile0_.weight as weight5_11_ from profile profile0_
+Hibernate: insert into profile (id, dob, height, location, owner_id, weight) values (null, ?, ?, ?, ?, ?)
+Hibernate: select profile0_.id as id1_11_, profile0_.dob as dob2_11_, profile0_.height as height3_11_, profile0_.location as location4_11_, profile0_.owner_id as owner_id6_11_, profile0_.weight as weight5_11_ from profile profile0_
+2016-10-24 19:49:08.123 DEBUG 27162 --- [           main] c.e.meetfit.web.rest.ProfileResource     : REST request to delete Profile : 3
+Hibernate: delete from profile where id=?
+Hibernate: select profile0_.id as id1_11_, profile0_.dob as dob2_11_, profile0_.height as height3_11_, profile0_.location as location4_11_, profile0_.owner_id as owner_id6_11_, profile0_.weight as weight5_11_ from profile profile0_
+Hibernate: insert into profile (id, dob, height, location, owner_id, weight) values (null, ?, ?, ?, ?, ?)
+2016-10-24 19:49:08.169 DEBUG 27162 --- [           main] c.e.meetfit.web.rest.ProfileResource     : REST request to get Profile : 4
+2016-10-24 19:49:08.204 DEBUG 27162 --- [           main] c.e.meetfit.web.rest.ProfileResource     : REST request to get Profile : 9223372036854775807
+Hibernate: select profile0_.id as id1_11_0_, profile0_.dob as dob2_11_0_, profile0_.height as height3_11_0_, profile0_.location as location4_11_0_, profile0_.owner_id as owner_id6_11_0_, profile0_.weight as weight5_11_0_, user1_.id as id1_9_1_, user1_.created_by as created_2_9_1_, user1_.created_date as created_3_9_1_, user1_.last_modified_by as last_mod4_9_1_, user1_.last_modified_date as last_mod5_9_1_, user1_.activated as activate6_9_1_, user1_.activation_key as activati7_9_1_, user1_.email as email8_9_1_, user1_.first_name as first_na9_9_1_, user1_.lang_key as lang_ke10_9_1_, user1_.last_name as last_na11_9_1_, user1_.login as login12_9_1_, user1_.password_hash as passwor13_9_1_, user1_.reset_date as reset_d14_9_1_, user1_.reset_key as reset_k15_9_1_ from profile profile0_ left outer join jhi_user user1_ on profile0_.owner_id=user1_.id where profile0_.id=?
+Hibernate: select profile0_.id as id1_11_, profile0_.dob as dob2_11_, profile0_.height as height3_11_, profile0_.location as location4_11_, profile0_.owner_id as owner_id6_11_, profile0_.weight as weight5_11_ from profile profile0_
+2016-10-24 19:49:08.250 DEBUG 27162 --- [           main] c.e.meetfit.web.rest.ProfileResource     : REST request to save Profile : Profile{id=null, height='1', weight='1', location='AAAAA', dob='1970-01-01T00:00Z[UTC]'}
+Hibernate: insert into profile (id, dob, height, location, owner_id, weight) values (null, ?, ?, ?, ?, ?)
+Hibernate: select profile0_.id as id1_11_, profile0_.dob as dob2_11_, profile0_.height as height3_11_, profile0_.location as location4_11_, profile0_.owner_id as owner_id6_11_, profile0_.weight as weight5_11_ from profile profile0_
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.324 sec - in com.elec5619.meetfit.web.rest.ProfileResourceIntTest
+Running com.elec5619.meetfit.web.rest.UserResourceIntTest
+2016-10-24 19:49:08.331 DEBUG 27162 --- [           main] c.e.meetfit.web.rest.UserResource        : REST request to get User : unknown
+Hibernate: select user0_.id as id1_9_, user0_.created_by as created_2_9_, user0_.created_date as created_3_9_, user0_.last_modified_by as last_mod4_9_, user0_.last_modified_date as last_mod5_9_, user0_.activated as activate6_9_, user0_.activation_key as activati7_9_, user0_.email as email8_9_, user0_.first_name as first_na9_9_, user0_.lang_key as lang_ke10_9_, user0_.last_name as last_na11_9_, user0_.login as login12_9_, user0_.password_hash as passwor13_9_, user0_.reset_date as reset_d14_9_, user0_.reset_key as reset_k15_9_ from jhi_user user0_ where user0_.login=?
+2016-10-24 19:49:08.382 DEBUG 27162 --- [           main] c.e.meetfit.web.rest.UserResource        : REST request to get User : admin
+Hibernate: select user0_.id as id1_9_, user0_.created_by as created_2_9_, user0_.created_date as created_3_9_, user0_.last_modified_by as last_mod4_9_, user0_.last_modified_date as last_mod5_9_, user0_.activated as activate6_9_, user0_.activation_key as activati7_9_, user0_.email as email8_9_, user0_.first_name as first_na9_9_, user0_.lang_key as lang_ke10_9_, user0_.last_name as last_na11_9_, user0_.login as login12_9_, user0_.password_hash as passwor13_9_, user0_.reset_date as reset_d14_9_, user0_.reset_key as reset_k15_9_ from jhi_user user0_ where user0_.login=?
+Hibernate: select authoritie0_.user_id as user_id1_9_0_, authoritie0_.authority_name as authorit2_10_0_, authority1_.name as name1_5_1_ from jhi_user_authority authoritie0_ inner join jhi_authority authority1_ on authoritie0_.authority_name=authority1_.name where authoritie0_.user_id=?
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.139 sec - in com.elec5619.meetfit.web.rest.UserResourceIntTest
+2016-10-24 19:49:08.462  INFO 27162 --- [       Thread-4] c.e.meetfit.config.CacheConfiguration    : Closing Cache Manager
+2016-10-24 19:49:08.470  WARN 27162 --- [       Thread-4] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-192]
+
+Results :
+
+Tests in error: 
+  AchievedbadgesResourceIntTest.createAchievedbadges:98 » NestedServlet Request ...
+  AchievedbadgesResourceIntTest.updateAchievedbadges:162 » NestedServlet Request...
+  FitnesseventResourceIntTest.createFitnessevent:122 » NestedServlet Request pro...
+
+Tests run: 67, Failures: 0, Errors: 3, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 50.189 s
+[INFO] Finished at: 2016-10-24T19:49:08-07:00
+[INFO] Final Memory: 42M/130M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.18.1:test (default-test) on project meetfit: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/andrew/NEWATTEMPT/elec5619-project-meetfit/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
