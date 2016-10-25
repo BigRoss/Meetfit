@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.inject.Inject;
+import java.util.List;
 
 @Service
 @Transactional
@@ -38,7 +39,13 @@ public class FitnesseventService {
         User currUser = userRepository.findOneByLogin(SecurityUtils.getCurrentUserLogin()).get();
         fitnessevent.addAttending(currUser);
         //Add 10 points when a user joins an event
-        Achievedbadges badges = achievedbadgesRepository.getOne(currUser.getId());
+        List<Achievedbadges> badgeslist = achievedbadgesRepository.findAll();
+        Achievedbadges badges =  null;
+        for (int i = 0; i < badgeslist.size(); i++) {
+            if(badgeslist.get(i).getUser().getId() == currUser.getId()){
+                badges = badgeslist.get(i);
+            }
+        }
         if(badges != null){
             badges.setPoints(badges.getPoints() + 10);
             calcBadgeService.add(badges);
