@@ -29,7 +29,7 @@
             vm.isSaving = true;
             if (vm.fitnessevent.id !== null) {
                 Fitnessevent.update(vm.fitnessevent, onSaveSuccess, onSaveError);
-                Attendingevent.attend(vm.fitnessevent, goodAlert, badAlert);
+                //Attendingevent.attend(vm.fitnessevent, goodAlert, badAlert);
                 //Attendingevent.get(vm.fitnessevent, goodAlert, badAlert);
             } else {
                 Fitnessevent.save(vm.fitnessevent, onSaveSuccess, onSaveError);
@@ -55,12 +55,13 @@
 
         function goodAlert(result)
         {
-            alert('yay: ' + result);
+            //alert('yay: ' + result);
+            console.log(result);
         }
 
         function badAlert(result)
         {
-            alert('bad: ' +result);
+            //alert('bad: ' +result);
         }
     }
 })();

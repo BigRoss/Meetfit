@@ -1,7 +1,9 @@
 package com.elec5619.meetfit.service;
 
+import com.elec5619.meetfit.domain.Achievedbadges;
 import com.elec5619.meetfit.domain.Fitnessevent;
 import com.elec5619.meetfit.domain.User;
+import com.elec5619.meetfit.repository.AchievedbadgesRepository;
 import com.elec5619.meetfit.repository.FitnesseventRepository;
 import com.elec5619.meetfit.repository.UserRepository;
 import com.elec5619.meetfit.security.SecurityUtils;
@@ -19,16 +21,30 @@ public class FitnesseventService {
     private final Logger log = LoggerFactory.getLogger(FitnesseventService.class);
 
     @Inject
+    CalcBadgeService calcBadgeService;
+
+    @Inject
     private FitnesseventRepository fitnesseventRepository;
+
+    @Inject
+    private AchievedbadgesRepository achievedbadgesRepository;
 
     @Inject
     private UserRepository userRepository;
 
-    public Fitnessevent addAttending(Fitnessevent fitnessevent){
+    public Fitnessevent addAttending(Fitnessevent fitnessevent)
+    {
 
-        Fitnessevent result = fitnesseventRepository.save(fitnessevent);
         User currUser = userRepository.findOneByLogin(SecurityUtils.getCurrentUserLogin()).get();
         fitnessevent.addAttending(currUser);
+        //Add 10 points when a user joins an event
+        Achievedbadges badges = achievedbadgesRepository.getOne(currUser.getId());
+        if(badges != null){
+            badges.setPoints(badges.getPoints() + 10);
+            calcBadgeService.add(badges);
+        }
+
+        Fitnessevent result = fitnesseventRepository.save(fitnessevent);
 
         return result;
     }

@@ -3,7 +3,10 @@ package com.elec5619.meetfit.web.rest;
 import com.codahale.metrics.annotation.Timed;
 import com.elec5619.meetfit.domain.Fitnessevent;
 
+import com.elec5619.meetfit.domain.User;
 import com.elec5619.meetfit.repository.FitnesseventRepository;
+import com.elec5619.meetfit.repository.UserRepository;
+import com.elec5619.meetfit.security.SecurityUtils;
 import com.elec5619.meetfit.service.FitnesseventService;
 import com.elec5619.meetfit.web.rest.util.HeaderUtil;
 import org.slf4j.Logger;
@@ -34,6 +37,9 @@ public class FitnesseventResource {
 
     @Inject
     private FitnesseventService fitnesseventService;
+
+    @Inject
+    private UserRepository userRepository;
 
     /**
      * POST  /fitnessevents : Create a new fitnessevent.
@@ -96,6 +102,8 @@ public class FitnesseventResource {
             return createFitnessevent(fitnessevent);
         }
         Fitnessevent result = fitnesseventService.addAttending(fitnessevent);
+//        User currUser = userRepository.findOneByLogin(SecurityUtils.getCurrentUserLogin()).get();
+//        result.addAttending(currUser);
 
         return ResponseEntity.ok().headers(HeaderUtil.createEntityUpdateAlert("fitnessevent", fitnessevent.getId().toString())).body(result);
     }
