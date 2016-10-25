@@ -4,6 +4,8 @@ import com.elec5619.meetfit.domain.Achievedbadges;
 import com.elec5619.meetfit.domain.Badges;
 import com.elec5619.meetfit.repository.AchievedbadgesRepository;
 import com.elec5619.meetfit.repository.BadgesRepository;
+import com.elec5619.meetfit.repository.UserRepository;
+import com.elec5619.meetfit.security.SecurityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -20,6 +22,9 @@ public class CalcBadgeService {
 
     @Inject
     private AchievedbadgesRepository achievedbadgesRepository;
+
+    @Inject
+    private UserRepository userRepository;
 
     @Inject
     private BadgesRepository badgesRepository;
@@ -46,6 +51,16 @@ public class CalcBadgeService {
                 maxpoint = badges.get(i).getPoints();
             }
         }
+
+        return result;
+    }
+
+    public Achievedbadges create(Achievedbadges achievedbadges) {
+        Achievedbadges result = achievedbadgesRepository.save(achievedbadges);
+        result.setPoints(0);
+        result.setBadges(null);
+        result.setType("");
+        result.setUser(userRepository.findOneByLogin(SecurityUtils.getCurrentUserLogin()).get());
 
         return result;
     }
