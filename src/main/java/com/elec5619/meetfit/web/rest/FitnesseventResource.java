@@ -3,16 +3,11 @@ package com.elec5619.meetfit.web.rest;
 import com.codahale.metrics.annotation.Timed;
 import com.elec5619.meetfit.domain.Fitnessevent;
 
-import com.elec5619.meetfit.domain.User;
 import com.elec5619.meetfit.repository.FitnesseventRepository;
-import com.elec5619.meetfit.repository.UserRepository;
-import com.elec5619.meetfit.security.SecurityUtils;
 import com.elec5619.meetfit.service.FitnesseventService;
 import com.elec5619.meetfit.web.rest.util.HeaderUtil;
-import com.elec5619.meetfit.web.rest.vm.ManagedUserVM;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -57,7 +52,7 @@ public class FitnesseventResource {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("fitnessevent", "idexists", "A new fitnessevent cannot already have an ID")).body(null);
         }
 
-        Fitnessevent result = fitnesseventService.doStuff(fitnessevent);
+        Fitnessevent result = fitnesseventService.addAttending(fitnessevent);
 
         return ResponseEntity.created(new URI("/api/fitnessevents/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert("fitnessevent", result.getId().toString()))
@@ -86,6 +81,36 @@ public class FitnesseventResource {
 
         return ResponseEntity.ok().headers(HeaderUtil.createEntityUpdateAlert("fitnessevent", fitnessevent.getId().toString())).body(result);
     }
+
+
+
+    /////// NEW STUFF ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    @RequestMapping(value = "/attend",
+        method = RequestMethod.POST,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public ResponseEntity<Fitnessevent> attendEvent(@Valid @RequestBody Fitnessevent fitnessevent) throws URISyntaxException {
+        System.out.println("==================================================================================YEP!!!!!!!!==========================================================================");
+        log.info("REST request to update Fitnessevent : {}", fitnessevent);
+        if (fitnessevent.getId() == null) {
+            return createFitnessevent(fitnessevent);
+        }
+        Fitnessevent result = fitnesseventService.addAttending(fitnessevent);
+
+        return ResponseEntity.ok().headers(HeaderUtil.createEntityUpdateAlert("fitnessevent", fitnessevent.getId().toString())).body(result);
+    }
+    /////// NEW STUFF ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /////// NEW STUFF ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    @RequestMapping(value = "/attend",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public String viewSomeInfo(@Valid @RequestBody Fitnessevent fitnessevent) throws URISyntaxException {
+        System.out.println("==================================================================================YEP!!!!!!!!==========================================================================");
+        return "TESTING1234";
+    }
+    /////// NEW STUFF ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
     /**
      * GET  /fitnessevents : get all the fitnessevents.

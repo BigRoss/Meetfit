@@ -4,6 +4,6 @@
     angular
         .module('meetFitApp')
         .constant('VERSION', "BETA")
-        .constant('DEBUG_INFO_ENABLED', false)
+        .constant('DEBUG_INFO_ENABLED', true)
 ;
 })();

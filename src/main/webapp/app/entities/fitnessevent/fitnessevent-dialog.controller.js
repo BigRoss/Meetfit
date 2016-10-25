@@ -5,9 +5,9 @@
         .module('meetFitApp')
         .controller('FitnesseventDialogController', FitnesseventDialogController);
 
-    FitnesseventDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Fitnessevent', 'User'];
+    FitnesseventDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Fitnessevent', 'Attendingevent', 'User'];
 
-    function FitnesseventDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Fitnessevent, User) {
+    function FitnesseventDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Fitnessevent, Attendingevent,  User) {
         var vm = this;
 
         vm.fitnessevent = entity;
@@ -29,6 +29,8 @@
             vm.isSaving = true;
             if (vm.fitnessevent.id !== null) {
                 Fitnessevent.update(vm.fitnessevent, onSaveSuccess, onSaveError);
+                Attendingevent.attend(vm.fitnessevent, goodAlert, badAlert);
+                //Attendingevent.get(vm.fitnessevent, goodAlert, badAlert);
             } else {
                 Fitnessevent.save(vm.fitnessevent, onSaveSuccess, onSaveError);
             }
@@ -49,6 +51,16 @@
 
         function openCalendar (date) {
             vm.datePickerOpenStatus[date] = true;
+        }
+
+        function goodAlert(result)
+        {
+            alert('yay: ' + result);
+        }
+
+        function badAlert(result)
+        {
+            alert('bad: ' +result);
         }
     }
 })();

@@ -24,10 +24,9 @@ public class FitnesseventService {
     @Inject
     private UserRepository userRepository;
 
-    public Fitnessevent doStuff(Fitnessevent fitnessevent){
+    public Fitnessevent addAttending(Fitnessevent fitnessevent){
 
         Fitnessevent result = fitnesseventRepository.save(fitnessevent);
-
         User currUser = userRepository.findOneByLogin(SecurityUtils.getCurrentUserLogin()).get();
         fitnessevent.addAttending(currUser);
 
