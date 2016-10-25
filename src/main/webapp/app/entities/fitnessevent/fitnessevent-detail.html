@@ -28,12 +28,6 @@
         <dd>
             {{vm.fitnessevent.organiser.login}}
         </dd>
-        <dt><span>Attending</span></dt>
-        <dd>
-            <span ng-repeat="attending in vm.fitnessevent.attendings">
-                {{attending.}}{{$last ? '' : ', '}}
-            </span>
-        </dd>
     </dl>
 
     <button type="submit"
