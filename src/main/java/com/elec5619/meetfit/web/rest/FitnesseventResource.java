@@ -57,7 +57,7 @@ public class FitnesseventResource {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("fitnessevent", "idexists", "A new fitnessevent cannot already have an ID")).body(null);
         }
 
-        Fitnessevent result = fitnesseventService.doStuff(fitnessevent);
+        Fitnessevent result = fitnesseventService.CreatorJoinEvent(fitnessevent);
 
         return ResponseEntity.created(new URI("/api/fitnessevents/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert("fitnessevent", result.getId().toString()))
