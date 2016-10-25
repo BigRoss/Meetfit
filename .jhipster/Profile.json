@@ -1,0 +1,35 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "owner",
+            "otherEntityName": "user",
+            "relationshipType": "one-to-one",
+            "ownerSide": true,
+	    "otherEntityField": "login"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "height",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "weight",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "location",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dob",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20161024084010",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "profile",
+    "pagination": "no"
+}
