@@ -50,7 +50,7 @@ public class AchievedbadgesResource {
         if (achievedbadges.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("achievedbadges", "idexists", "A new achievedbadges cannot already have an ID")).body(null);
         }
-        Achievedbadges result = badgeService.add(achievedbadges);
+        Achievedbadges result = badgeService.create(achievedbadges);
         return ResponseEntity.created(new URI("/api/achievedbadges/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert("achievedbadges", result.getId().toString()))
             .body(result);
