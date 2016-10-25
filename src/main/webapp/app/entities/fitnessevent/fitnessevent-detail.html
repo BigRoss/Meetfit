@@ -47,4 +47,9 @@
         <span class="glyphicon glyphicon-pencil"></span>
         <span class="hidden-xs hidden-sm"> Edit</span>
     </button>
+
+    <button type="button" ui-sref="{{ vm.previousState }}" class="btn btn-success" data-dismiss="modal" ng-click="vm.confirmJoin(vm.fitnessevent.id)">
+        <span class="glyphicon glyphicon-thumbs-up"></span>&nbsp;<span>Join Event</span>
+    </button>
+
 </div>
